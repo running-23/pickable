@@ -108,6 +108,6 @@ ER図作成： ~2/15
 
 本リリース： 3月中〜下旬
 ## 画面遷移図
-https://www.figma.com/file/dIojtrYK4sPY9JchPf4kFj/Pickable
+https://www.figma.com/file/MDG2PmmSNAQeeXRj0lDXZ1/Pickable?node-id=0%3A1
 ## ER図
 未作成
