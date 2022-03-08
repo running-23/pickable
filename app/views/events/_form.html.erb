@@ -43,17 +43,7 @@
 
   <div class="field">
     <%= form.label :pickable_mode %>
-    <%= form.number_field :pickable_mode %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.text_field :category_id %>
+    <%= form.select :pickable_mode, [ ["all_applicant"], ["part_of_applicant"], ["random"] ] %>
   </div>
 
   <div class="actions">

@@ -12,8 +12,6 @@
       <th>Scheduled date</th>
       <th>Place</th>
       <th>Pickable mode</th>
-      <th>User</th>
-      <th>Category</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,8 +26,6 @@
         <td><%= event.scheduled_date %></td>
         <td><%= event.place %></td>
         <td><%= event.pickable_mode %></td>
-        <td><%= event.user_id %></td>
-        <td><%= event.category_id %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

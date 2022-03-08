@@ -35,15 +35,5 @@
   <%= @event.pickable_mode %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @event.category_id %>
-</p>
-
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
