@@ -18,6 +18,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:mattermost_id, :password, :password_confirmation, :email,
-    :accept_random, :name)
+                                 :accept_random, :name)
   end
 end
