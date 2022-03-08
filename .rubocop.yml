@@ -49,6 +49,7 @@ Metrics/LineLength:
   IgnoredPatterns: ['\A#']
   Exclude:
     - "db/migrate/*.rb"
+    - "config/initializers/sorcery.rb"
 
 # メソッドの行数を20行までにする
 Metrics/MethodLength:
