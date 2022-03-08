@@ -31,6 +31,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 10 }
 
+  validates :email, uniqueness: true, presence: true
+
   validates :accept_randam, inclusion: { in: [true, false] }
 
   enum role: { general: 0, admin: 1 }
