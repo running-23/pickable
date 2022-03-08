@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
   validates :mattermost_id, uniqueness: true, presence: true
 
-  validates :name, presence: true, length: { maximum: 10 }
+  validates :name, presence: true, length: { maximum: 20 }
 
   validates :email, uniqueness: true, presence: true
 
