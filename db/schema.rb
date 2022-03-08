@@ -18,12 +18,14 @@ ActiveRecord::Schema.define(version: 2022_03_08_113447) do
   create_table "users", force: :cascade do |t|
     t.string "mattermost_id", null: false
     t.string "name", null: false
-    t.boolean "accept_randam", default: true, null: false
+    t.string "email", null: false
+    t.boolean "accept_random", default: true, null: false
     t.string "crypted_password"
     t.string "salt"
     t.integer "role", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["mattermost_id"], name: "index_users_on_mattermost_id", unique: true
   end
 

@@ -3,10 +3,11 @@
 # Table name: users
 #
 #  id               :bigint           not null, primary key
-#  accept_randam    :boolean          default(TRUE), not null
+#  accept_random    :boolean          default(TRUE), not null
 #  crypted_password :string
+#  email            :string           not null
 #  name             :string           not null
-#  role             :integer          default(0), not null
+#  role             :integer          default("general"), not null
 #  salt             :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -14,6 +15,7 @@
 #
 # Indexes
 #
+#  index_users_on_email          (email) UNIQUE
 #  index_users_on_mattermost_id  (mattermost_id) UNIQUE
 #
 FactoryBot.define do
