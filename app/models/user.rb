@@ -27,5 +27,6 @@ class User < ApplicationRecord
 
   validates :accept_randam, inclusion: {in: [true, false]}
   
+  enum role: { general: 0, admin: 1 }
 
 end
