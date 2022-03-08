@@ -14,6 +14,11 @@
 #  updated_at           :datetime         not null
 #
 class Event < ApplicationRecord
-  belongs_to :user
-  belongs_to :category
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :number_of_members, presence: true
+  validates :number_of_applicants, presence: true
+  validates :scheduled_date, presence: true
+  validates :place, presence: true
+  validates :pickable_mode, presence: true
 end
