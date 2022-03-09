@@ -46,10 +46,9 @@ Naming/AccessorMethodName:
 # 一行の長さは100字まで。コメントは制限しない
 Metrics/LineLength:
   Max: 100
-  IgnoredPatterns: ['\A#']
+  IgnoredPatterns: ['(\A|\s)#']
   Exclude:
     - "db/migrate/*.rb"
-    - "config/initializers/sorcery.rb"
 
 # メソッドの行数を20行までにする
 Metrics/MethodLength:

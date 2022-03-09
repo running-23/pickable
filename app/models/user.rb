@@ -36,5 +36,5 @@ class User < ApplicationRecord
   validates :accept_randam, inclusion: { in: [true, false] }
 
   enum role: { general: 0, admin: 1 }
-  enum accept_random: {  accepted: 0, not_accepted: 1 }
+  enum accept_random: { accepted: 0, not_accepted: 1 }
 end
