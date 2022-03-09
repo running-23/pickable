@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :pickable_mode %>
-    <%= form.select :pickable_mode, [ ["all_applicant"], ["part_of_applicant"], ["random"] ] %>
+    <%= form.select :pickable_mode, Event.pickable_modes_i18n.invert, {}  %>
   </div>
 
   <div class="actions">
