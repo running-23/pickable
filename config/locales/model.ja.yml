@@ -21,5 +21,5 @@ ja:
         admin: 管理者
         general: 一般
       accept_random: ランダム参加設定
-        accept: あり
-        none: なし
+        accepted: WELCOME
+        not_accepted: SLEEPING 
