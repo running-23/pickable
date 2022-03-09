@@ -17,8 +17,8 @@ ja:
         number_of_members: 参加者数
         number_of_applicants: 希望者枠数
         scheduled_date: イベント日時
-        place: 場所
-        pickable_mode: ピッカブルモード
+        place: 開催場所
+        pickable_mode: Pickableモード
 
   enums:
     user:
