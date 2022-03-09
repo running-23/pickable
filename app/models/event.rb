@@ -22,5 +22,5 @@ class Event < ApplicationRecord
   validates :place, presence: true
   validates :pickable_mode, presence: true
 
-  enum pickable_mode: { all_applicant: 0, part_of_applicant: 1, random: 2 }
+  enum pickable_mode: { all_applicant: 0, applicant_and_random: 1, random: 2 }
 end
