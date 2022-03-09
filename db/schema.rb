@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_113447) do
     t.string "mattermost_id", null: false
     t.string "name", null: false
     t.string "email", null: false
-    t.boolean "accept_random", default: true, null: false
+    t.integer "accept_random", default: 0, null: false
     t.string "crypted_password"
     t.string "salt"
     t.integer "role", default: 0, null: false

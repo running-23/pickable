@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id               :bigint           not null, primary key
-#  accept_random    :boolean          default(TRUE), not null
+#  accept_random    :integer          default(NULL), not null
 #  crypted_password :string
 #  email            :string           not null
 #  name             :string           not null
