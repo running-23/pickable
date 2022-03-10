@@ -11,6 +11,10 @@ ja:
       updated_at: 更新日時
       user:
         name: 名前
+        email: メールアドレス
+        mattermost_id: マターモストID
+        password: パスワード
+        password_confirmation: パスワード確認
       event:
         title: タイトル
         description: 詳細
@@ -19,12 +23,15 @@ ja:
         scheduled_date: イベント日時
         place: 開催場所
         pickable_mode: Pickableモード
-
+        
   enums:
     user:
       role:
         admin: 管理者
         general: 一般
+      accept_random: ランダム参加設定
+        accepted: WELCOME
+        not_accepted: SLEEPING 
     event:
       pickable_mode:
         all_applicant: 希望制
