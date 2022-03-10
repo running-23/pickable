@@ -14,6 +14,9 @@
 #  updated_at           :datetime         not null
 #
 class Event < ApplicationRecord
+  has_many :participations
+  belongs_to :user
+
   validates :title, presence: true
   validates :description, presence: true
   validates :number_of_members, presence: true
