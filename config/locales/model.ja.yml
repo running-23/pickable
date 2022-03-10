@@ -3,6 +3,7 @@ ja:
     # User.model_name.human
     models:
       user: ユーザー
+      event: イベント
     # User.human_attributes_name(:name)
     attributes:
       id: ID
@@ -10,9 +11,22 @@ ja:
       updated_at: 更新日時
       user:
         name: 名前
+      event:
+        title: タイトル
+        description: 詳細
+        number_of_members: 参加者数
+        number_of_applicants: 希望者枠数
+        scheduled_date: イベント日時
+        place: 開催場所
+        pickable_mode: Pickableモード
 
   enums:
     user:
       role:
         admin: 管理者
         general: 一般
+    event:
+      pickable_mode:
+        all_applicant: 希望制
+        applicant_and_random: 一部希望制
+        random: ランダム

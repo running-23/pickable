@@ -1,0 +1,52 @@
+<%= form_with(model: event) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_members %>
+    <%= form.number_field :number_of_members %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_applicants %>
+    <%= form.number_field :number_of_applicants %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheduled_date %>
+    <%= form.datetime_select :scheduled_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place %>
+    <%= form.text_field :place %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pickable_mode %>
+    <%= form.select :pickable_mode, Event.pickable_modes_i18n.invert, {}  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
