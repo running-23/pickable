@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_03_08_113447) do
+ActiveRecord::Schema.define(version: 2022_03_08_011836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +29,17 @@ ActiveRecord::Schema.define(version: 2022_03_08_113447) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["mattermost_id"], name: "index_users_on_mattermost_id", unique: true
+
+  create_table "events", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description", null: false
+    t.integer "number_of_members", null: false
+    t.integer "number_of_applicants", default: 0, null: false
+    t.datetime "scheduled_date", null: false
+    t.string "place", null: false
+    t.integer "pickable_mode", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

@@ -3,6 +3,7 @@ ja:
     # User.model_name.human
     models:
       user: ユーザー
+      event: イベント
     # User.human_attributes_name(:name)
     attributes:
       id: ID
@@ -14,7 +15,15 @@ ja:
         mattermost_id: マターモストID
         password: パスワード
         password_confirmation: パスワード確認
-
+      event:
+        title: タイトル
+        description: 詳細
+        number_of_members: 参加者数
+        number_of_applicants: 希望者枠数
+        scheduled_date: イベント日時
+        place: 開催場所
+        pickable_mode: Pickableモード
+        
   enums:
     user:
       role:
@@ -23,3 +32,8 @@ ja:
       accept_random: ランダム参加設定
         accepted: WELCOME
         not_accepted: SLEEPING 
+    event:
+      pickable_mode:
+        all_applicant: 希望制
+        applicant_and_random: 一部希望制
+        random: ランダム
