@@ -20,7 +20,7 @@
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  has_many :event
+  has_many :events
   has_many :participations, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
