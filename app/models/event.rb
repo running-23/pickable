@@ -14,7 +14,7 @@
 #  updated_at           :datetime         not null
 #
 class Event < ApplicationRecord
-  has_many :participations
+  has_many :participations, dependent: :destroy
   belongs_to :user
 
   validates :title, presence: true
