@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
+  skip_before_action :require_login, only: %i[index show]
 
   def index
     @events = Event.all
