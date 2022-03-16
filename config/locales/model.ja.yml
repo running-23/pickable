@@ -4,6 +4,7 @@ ja:
     models:
       user: ユーザー
       event: イベント
+      category: カテゴリー
     # User.human_attributes_name(:name)
     attributes:
       id: ID
@@ -17,6 +18,7 @@ ja:
         password_confirmation: パスワード確認
         accept_random: ランダム参加設定
         role: 権限
+        user_categories: 希望ジャンル
       event:
         title: タイトル
         description: 詳細
@@ -25,6 +27,12 @@ ja:
         scheduled_date: イベント日時
         place: 開催場所
         pickable_mode: Pickableモード
+      category:
+        name: カテゴリ
+    errors:
+      messages:
+        user_has_upto_three_category: は3つまででお願いシャス！
+
         
   enums:
     user:
