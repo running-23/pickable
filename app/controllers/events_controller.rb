@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   skip_before_action :require_login
 
   def index
-    @events = Event.page(params[:page]).per(10)
+    @events = Event.where(scheduled_date: Time.now..'3022-01-1').page(params[:page]).per(10)
   end
 
   def show; end
