@@ -3,8 +3,7 @@ class EventsController < ApplicationController
   skip_before_action :require_login
 
   def index
-    # 後でkaminari追加
-    @events = Event.all
+    @events = Event.page(params[:page]).per(10)
   end
 
   def show; end
