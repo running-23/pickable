@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
-  skip_before_action :require_login, only: %i[index show]
+  skip_before_action :require_login
 
   def index
+    # 後でkaminari追加
     @events = Event.all
   end
 
