@@ -26,7 +26,7 @@
     <%= form.number_field :number_of_members %>
   </div>
 
-  <div class="field">
+  <div class="field" id="applicants">
     <%= form.label :number_of_applicants %>
     <%= form.number_field :number_of_applicants %>
   </div>
@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :pickable_mode %>
-    <%= form.select :pickable_mode, Event.pickable_modes_i18n.invert, {}  %>
+    <%= form.select :pickable_mode, Event.pickable_modes_i18n.invert, {}, id: 'selbox'  %>
   </div>
 
   <div class="actions">

@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
+  skip_before_action :require_login
 
   def index
-    @events = Event.all
+    @events = Event.where(scheduled_date: Time.current..Time.current.since(3.years)).page(params[:page]).per(10)
   end
 
   def show; end
