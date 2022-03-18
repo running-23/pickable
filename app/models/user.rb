@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates :mattermost_id, uniqueness: true, presence: true
   validates :name, presence: true, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
-  validates :accept_randam, inclusion: { in: [true, false] }
+  validates :accept_random, presence: true
   validates :user_categories,
             length: { maximum: 3,
                       message:
