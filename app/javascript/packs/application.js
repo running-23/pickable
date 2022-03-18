@@ -12,6 +12,9 @@ import "channels"
 import "bootstrap"
 import "../stylesheets/application.scss"
 
+// JSファイルの読み込み
+import "./common"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
