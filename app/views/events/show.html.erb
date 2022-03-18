@@ -35,5 +35,15 @@
   <%= @event.pickable_mode_i18n %>
 </p>
 
+<p>
+  <strong>ユーザー名</strong>
+  <%= @event.user.name %>
+</p>
+
+<p>
+  <strong>カテゴリー</strong>
+  <%= @event.category.name %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
