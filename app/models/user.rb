@@ -35,7 +35,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
 
-  validates :accept_randam, inclusion: { in: [true, false] }
+  validates :accept_random, inclusion: { in: [true, false] }
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, not_accepted: 1 }
