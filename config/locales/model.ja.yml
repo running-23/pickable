@@ -41,7 +41,7 @@ ja:
         general: 一般
       accept_random:
         accepted: WELCOME
-        not_accepted: SLEEPING 
+        dynied: SLEEPING 
     event:
       pickable_mode:
         all_applicant: 希望制
