@@ -40,5 +40,5 @@ class User < ApplicationRecord
                       I18n.t('activerecord.errors.messages.user_has_upto_three_category') }
 
   enum role: { general: 0, admin: 1 }
-  enum accept_random: { accepted: 0, not_accepted: 1 }
+  enum accept_random: { accepted: 0, denied: 1 }
 end
