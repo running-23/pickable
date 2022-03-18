@@ -46,6 +46,6 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :description, :number_of_members, :number_of_applicants,
-                                  :scheduled_date, :place, :pickable_mode)
+                                  :scheduled_date, :place, :pickable_mode, :user_id)
   end
 end
