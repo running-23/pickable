@@ -34,10 +34,6 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true
-  validates :user_categories,
-            length: { maximum: 3,
-                      message:
-                      I18n.t('activerecord.errors.messages.user_has_upto_three_category') }
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }

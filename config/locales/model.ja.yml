@@ -28,7 +28,7 @@ ja:
         place: 開催場所
         pickable_mode: Pickableモード
       category:
-        name: カテゴリ
+        name: カテゴリー
     errors:
       messages:
         user_has_upto_three_category: は3つまででお願いシャス！
