@@ -46,6 +46,17 @@
     <%= form.select :pickable_mode, Event.pickable_modes_i18n.invert, {}, id: 'selbox'  %>
   </div>
 
+  <!-- 動作確認用最低限の実装 -->
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
