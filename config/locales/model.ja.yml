@@ -29,9 +29,6 @@ ja:
         pickable_mode: Pickableモード
       category:
         name: カテゴリー
-    errors:
-      messages:
-        user_has_upto_three_category: は3つまででお願いシャス！
 
         
   enums:
