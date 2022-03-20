@@ -3,16 +3,16 @@
 # Table name: users
 #
 #  id                :bigint           not null, primary key
-#  accept_random     :integer          default(0), not null
+#  accept_random     :integer          default("accepted"), not null
 #  crypted_password  :string
 #  email             :string           not null
 #  name              :string           not null
 #  remote_avatar_url :string
-#  role              :integer          default(0), not null
+#  role              :integer          default("general"), not null
 #  salt              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  mattermost_id     :string           not null
+#  mattermost_id     :string
 #
 # Indexes
 #
@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: lambda {
                                                           new_record? || changes[:crypted_password]
                                                         }
-  validates :mattermost_id, uniqueness: true, presence: true
+  validates :mattermost_id, uniqueness: true
   validates :name, presence: true, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true

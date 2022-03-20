@@ -140,7 +140,7 @@ Rails.application.config.sorcery.configure do |config|
   config.github.secret = Rails.application.credentials.dig(:github, :secret)
   config.github.callback_url = Rails.application.credentials.dig(:github, :callback_url)
   config.github.user_info_mapping = {email: "email", name: "login", remote_avatar_url: "avatar_url"}
-  config.github.scope = config.github.scope = "user:email"
+  config.github.scope = "user:email"
   #
   # config.paypal.key = ""
   # config.paypal.secret = ""
@@ -542,7 +542,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    user.authentications_class = Autentication
+    user.authentications_class = Authentication
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`
