@@ -7,7 +7,8 @@ class OauthsController < ApplicationController
 
   def callback
     provider = params[:provider]
-    if @user = login_from(provider)
+    @user = login_from(provider)
+    if @user
       redirect_back_or_to events_path, success: "#{provider.titleize}アカウントでログインしました。"
     else
       begin
@@ -15,9 +16,9 @@ class OauthsController < ApplicationController
         reset_session
         auto_login(@user)
         redirect_to events_path, success: "#{provider.titleize}アカウントでログインしました。"
-      rescue
+      rescue StandardError
         redirect_to root_path, danger: "#{provider.titleize}アカウントでのログインに失敗しました。"
       end
     end
-   end
+  end
 end
