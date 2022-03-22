@@ -1,7 +1,5 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
-  # ログイン実装まで暫定的にスキップ
-  skip_before_action :require_login
 
   def index
     @categories = Category.all

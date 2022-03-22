@@ -1,0 +1,25 @@
+<header>
+  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+
+    <%= link_to root_path, class: 'navbar-brand' do %>
+      <h1>Pickable</h1>
+    <% end %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto main-nav align-items-center">
+        <li class="nav-item">
+          <%= link_to 'Events', events_path ,class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Create Event', new_event_path ,class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'My Page', '#' ,class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Logout', logout_path ,class: 'nav-link', method: :delete %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
