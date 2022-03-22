@@ -62,3 +62,7 @@ Metrics/AbcSize:
 # ブロック定義行の長さを35にする
 Metrics/BlockLength:
   Max: 35 # default 25
+
+# dependent: :destroyがなくても許容する
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
