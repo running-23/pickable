@@ -6,7 +6,8 @@
 #  accept_random     :integer          default("accepted"), not null
 #  crypted_password  :string
 #  email             :string           not null
-#  name              :string           not null
+#  github_name       :string           not null
+#  name              :string
 #  remote_avatar_url :string
 #  role              :integer          default("general"), not null
 #  salt              :string
@@ -34,7 +35,8 @@ class User < ApplicationRecord
                                                           new_record? || changes[:crypted_password]
                                                         }
   validates :mattermost_id, uniqueness: true
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :github_name, presence: true
+  validates :name, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true
 

@@ -6,7 +6,8 @@
 #  accept_random     :integer          default("accepted"), not null
 #  crypted_password  :string
 #  email             :string           not null
-#  name              :string           not null
+#  github_name       :string           not null
+#  name              :string
 #  remote_avatar_url :string
 #  role              :integer          default("general"), not null
 #  salt              :string
