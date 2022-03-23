@@ -13,12 +13,10 @@
 #  salt              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  mattermost_id     :string
 #
 # Indexes
 #
-#  index_users_on_email          (email) UNIQUE
-#  index_users_on_mattermost_id  (mattermost_id) UNIQUE
+#  index_users_on_email  (email) UNIQUE
 #
 require 'rails_helper'
 
