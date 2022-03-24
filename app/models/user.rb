@@ -16,7 +16,8 @@
 #
 # Indexes
 #
-#  index_users_on_email  (email) UNIQUE
+#  index_users_on_email        (email) UNIQUE
+#  index_users_on_github_name  (github_name) UNIQUE
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
@@ -33,7 +34,7 @@ class User < ApplicationRecord
                                                           new_record? || changes[:crypted_password]
                                                         }
   validates :mattermost_id, uniqueness: true
-  validates :github_name, presence: true
+  validates :github_name, uniqueness: true, presence: true
   validates :name, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true

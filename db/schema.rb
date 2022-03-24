@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_23_065154) do
+ActiveRecord::Schema.define(version: 2022_03_24_011540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2022_03_23_065154) do
     t.string "remote_avatar_url"
     t.string "github_name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["github_name"], name: "index_users_on_github_name", unique: true
   end
 
   add_foreign_key "events", "categories"

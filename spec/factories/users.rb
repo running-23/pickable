@@ -16,7 +16,8 @@
 #
 # Indexes
 #
-#  index_users_on_email  (email) UNIQUE
+#  index_users_on_email        (email) UNIQUE
+#  index_users_on_github_name  (github_name) UNIQUE
 #
 FactoryBot.define do
   factory :user do
