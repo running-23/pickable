@@ -6,18 +6,18 @@
 #  accept_random     :integer          default("accepted"), not null
 #  crypted_password  :string
 #  email             :string           not null
-#  name              :string           not null
+#  github_name       :string           not null
+#  name              :string
 #  remote_avatar_url :string
 #  role              :integer          default("general"), not null
 #  salt              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  mattermost_id     :string
 #
 # Indexes
 #
-#  index_users_on_email          (email) UNIQUE
-#  index_users_on_mattermost_id  (mattermost_id) UNIQUE
+#  index_users_on_email        (email) UNIQUE
+#  index_users_on_github_name  (github_name) UNIQUE
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
@@ -34,7 +34,8 @@ class User < ApplicationRecord
                                                           new_record? || changes[:crypted_password]
                                                         }
   validates :mattermost_id, uniqueness: true
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :github_name, uniqueness: true, presence: true
+  validates :name, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true
 
