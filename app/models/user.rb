@@ -41,7 +41,7 @@ class User < ApplicationRecord
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }
-  
+
   def participation(event)
     participating_events << event
   end
