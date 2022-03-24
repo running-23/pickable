@@ -40,4 +40,9 @@ class Event < ApplicationRecord
   validates :pickable_mode, presence: true
 
   enum pickable_mode: { all_applicant: 0, applicant_and_random: 1, random: 2 }
+  
+  def created_by?(user)
+    return false unless user
+    user_id == user.id
+  end
 end
