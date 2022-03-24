@@ -6,18 +6,18 @@
 #  accept_random     :integer          default("accepted"), not null
 #  crypted_password  :string
 #  email             :string           not null
-#  name              :string           not null
+#  github_name       :string           not null
+#  name              :string
 #  remote_avatar_url :string
 #  role              :integer          default("general"), not null
 #  salt              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  mattermost_id     :string
 #
 # Indexes
 #
-#  index_users_on_email          (email) UNIQUE
-#  index_users_on_mattermost_id  (mattermost_id) UNIQUE
+#  index_users_on_email        (email) UNIQUE
+#  index_users_on_github_name  (github_name) UNIQUE
 #
 require 'rails_helper'
 

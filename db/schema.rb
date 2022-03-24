@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_20_211041) do
+ActiveRecord::Schema.define(version: 2022_03_24_011540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,8 +66,7 @@ ActiveRecord::Schema.define(version: 2022_03_20_211041) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "mattermost_id"
-    t.string "name", null: false
+    t.string "name"
     t.string "email", null: false
     t.integer "accept_random", default: 0, null: false
     t.string "crypted_password"
@@ -76,8 +75,9 @@ ActiveRecord::Schema.define(version: 2022_03_20_211041) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remote_avatar_url"
+    t.string "github_name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["mattermost_id"], name: "index_users_on_mattermost_id", unique: true
+    t.index ["github_name"], name: "index_users_on_github_name", unique: true
   end
 
   add_foreign_key "events", "categories"
