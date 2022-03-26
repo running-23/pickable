@@ -53,9 +53,10 @@
 <% end %>
 <% if logged_in? %>
   <% if current_user.participating_events.include?(@event) %>
-    <td><%= link_to '不参加', event_participation_path(@event), method: :delete %></td>
+    <%= link_to '不参加', event_participation_path(@event), method: :delete %>
   <% else %>
-    <td><%= link_to '参加', event_participation_path(@event), method: :post %></td>
+    <%= link_to '参加', event_participation_path(@event), method: :post %>
   <% end %>
+<% else%>
+  <%= link_to '参加', event_participation_path(@event), method: :post %>
 <% end %>
-
