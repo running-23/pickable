@@ -43,15 +43,15 @@ class User < ApplicationRecord
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }
 
-  def participation(event)
+  def participate(event)
     participating_events << event
   end
 
-  def cansel(event)
+  def cancel(event)
     participating_events.delete event
   end
 
-  def participation?(event)
+  def participated?(event)
     participating_events.include? event
   end
 end
