@@ -45,5 +45,14 @@
   <%= @event.category.name %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+<% if @event.created_by?(current_user) %>
+  <%= link_to 'Edit', edit_event_path(@event) %> 
+  <%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<% if logged_in? && current_user.participating_events.include?(@event) %>
+  <%= link_to '不参加', event_participation_path(@event), method: :delete %>
+<% else %>
+  <%= link_to '参加', event_participation_path(@event), method: :post %>
+<% end %>

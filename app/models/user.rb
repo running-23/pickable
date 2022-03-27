@@ -23,6 +23,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :events
   has_many :participations, dependent: :destroy
+  has_many :participating_events, through: :participations, source: :event
   has_many :user_categories, dependent: :destroy
   has_many :categories, through: :user_categories
   has_many :authentications, dependent: :destroy
@@ -41,4 +42,16 @@ class User < ApplicationRecord
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }
+
+  def participate(event)
+    participating_events << event
+  end
+
+  def cancel(event)
+    participating_events.delete event
+  end
+
+  def participated?(event)
+    participating_events.include? event
+  end
 end
