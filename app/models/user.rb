@@ -34,7 +34,6 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: lambda {
                                                           new_record? || changes[:crypted_password]
                                                         }
-  validates :mattermost_id, uniqueness: true
   validates :github_name, uniqueness: true, presence: true
   validates :name, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
