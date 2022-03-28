@@ -14,7 +14,7 @@
           <%= link_to 'Create Event', new_event_path ,class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'My Page', '#' ,class: 'nav-link' %>
+          <%= link_to 'My Page', user_path(current_user.id), class: 'nav-link' %>
         </li>
         <li class="nav-item">
           <%= link_to 'Logout', logout_path ,class: 'nav-link', method: :delete %>

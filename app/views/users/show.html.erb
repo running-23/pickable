@@ -1,0 +1,24 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h1 class="mb-5">My Page</h1>
+      <table>
+        <tr>
+          <th><%= t(User.human_attribute_name(:remote_avatar_url)) %></th>
+          <td><%= image_tag current_user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %></td>
+        </tr>
+        <tr>
+          <th><%= t(User.human_attribute_name(:name)) %></th>
+          <td><%= @user.name %></td>
+          <td><%= link_to 'edit', edit_user_path(@user) %></td>
+        </tr>
+        <tr>
+          <th><%= t(User.human_attribute_name(:accept_random)) %></th>
+          <td><%= @user.accept_random_i18n %></td>
+        </tr> 
+          <td><%= link_to 'ひよこねリンク', 'https://hiyoco-connect.herokuapp.com/' %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
