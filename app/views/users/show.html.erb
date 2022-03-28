@@ -21,7 +21,11 @@
         <tr>
           <th>参加イベント一覧</th>
           <td> 
+             <% if @events.present? %>
              <%= render partial: 'users/event', collection: @events %>
+             <% else %>
+             <p>参加しているイベントはありません</p>
+             <% end %>
           </td>
       </table>
     </div>
