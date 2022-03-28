@@ -3,12 +3,12 @@ document.addEventListener('turbolinks:load', function(){
   elem.addEventListener('change', function(){
     var result = elem.value;
 
-    if (result == "random") {
-      //非表示
-        document.getElementById("applicants").style.display = "none";
-    } else {
+    if (result == "applicant_and_random") {
       //表示
       document.getElementById("applicants").style.display = "block";
+    } else {
+      //非表示
+      document.getElementById("applicants").style.display = "none";
     }
 
   });
