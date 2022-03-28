@@ -2,7 +2,9 @@ class UsersController < ApplicationController
 before_action :set_user, only: %i[edit show update]
   def edit; end
 
-  def show; end
+  def show
+    @events = current_user.participating_events.includes(:user).order(created_at: :desc)
+  end
   
   def update
     if @user.update(user_params)

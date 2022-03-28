@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Scheduled date</th>
+      <th>Place</th>
+      <th>User_name</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.scheduled_date %></td>
+        <td><%= event.place %></td>
+        <td><%= event.user.name %></td>
+        <td><%= event.category.name %></td>
+      </tr>
+  </tbody>
+</table>

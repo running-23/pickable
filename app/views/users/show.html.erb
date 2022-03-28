@@ -18,6 +18,11 @@
         </tr> 
           <td><%= link_to 'ひよこねリンク', 'https://hiyoco-connect.herokuapp.com/' %></td>
         </tr>
+        <tr>
+          <th>参加イベント一覧</th>
+          <td> 
+             <%= render partial: 'users/event', collection: @events %>
+          </td>
       </table>
     </div>
   </div>
