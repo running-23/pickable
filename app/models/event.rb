@@ -41,7 +41,7 @@ class Event < ApplicationRecord
 
   enum pickable_mode: { all_applicant: 0, applicant_and_random: 1, random: 2 }
 
-  scope :scheduled_date, -> { where(scheduled_date: Time.current..Time.current.since(3.years)) }
+  scope :scheduled_date_from_now_on, -> { where(scheduled_date: Time.current..Time.current.since(3.years)) }
 
   def created_by?(user)
     return false unless user
