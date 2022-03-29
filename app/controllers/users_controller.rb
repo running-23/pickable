@@ -3,7 +3,7 @@ before_action :set_user, only: %i[edit show update]
   def edit; end
 
   def show
-    @events = current_user.participating_events.includes(:user).order(created_at: :desc)
+    @events = current_user.participating_events.includes(%i[user category]).order(scheduled_date: :asc)
   end
   
   def update
