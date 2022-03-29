@@ -35,7 +35,7 @@ class User < ApplicationRecord
                                                           new_record? || changes[:crypted_password]
                                                         }
   validates :github_name, uniqueness: true, presence: true
-  validates :name, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 20 }, on: :update
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true
 
