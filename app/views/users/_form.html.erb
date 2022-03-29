@@ -20,6 +20,11 @@
     <%= form.label :accept_random %>
     <%= form.select :accept_random, User.accept_randoms_i18n.invert, {} %>
   </div>
+  
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

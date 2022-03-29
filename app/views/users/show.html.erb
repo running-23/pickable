@@ -4,18 +4,26 @@
       <h1 class="mb-5">My Page</h1>
       <table>
         <tr>
-          <th><%= t(User.human_attribute_name(:remote_avatar_url)) %></th>
           <td><%= image_tag current_user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %></td>
         </tr>
         <tr>
-          <th><%= t(User.human_attribute_name(:name)) %></th>
+          <th>名前</th>
           <td><%= @user.name %></td>
           <td><%= link_to 'edit', edit_user_path(@user) %></td>
         </tr>
         <tr>
-          <th><%= t(User.human_attribute_name(:accept_random)) %></th>
+          <th>参加許可設定</th>
           <td><%= @user.accept_random_i18n %></td>
         </tr> 
+        <tr>
+          <th>設定カテゴリー</th>
+          <td>
+          <% @user.categories.each do |category| %>
+            <%= category.name %>
+          <% end %>
+          </td>
+        </tr>
+        <tr>
           <td><%= link_to 'ひよこねリンク', 'https://hiyoco-connect.herokuapp.com/' %></td>
         </tr>
         <tr>

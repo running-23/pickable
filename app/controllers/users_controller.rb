@@ -21,6 +21,6 @@ before_action :set_user, only: %i[edit show update]
   end
 
   def user_params
-    params.require(:user).permit(:name, :accept_random, :category_id)
+    params.require(:user).permit(:name, :accept_random, category_ids: [])
   end
 end
