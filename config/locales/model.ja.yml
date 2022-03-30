@@ -18,7 +18,7 @@ ja:
         accept_random: ランダム参加設定
         role: 権限
         category_id: 希望ジャンル
-        hiyoconne_url: ひよこねリンク
+        hiyoconne_url: ひよコネリンク
       event:
         title: タイトル
         description: 詳細
