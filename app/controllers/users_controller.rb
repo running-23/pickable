@@ -3,8 +3,10 @@ class UsersController < ApplicationController
   def edit; end
 
   def show
-    @events = current_user.participating_events.includes(%i[user
-                                                            category]).order(scheduled_date: :asc)
+    @future_events = current_user.participating_events.includes(%i[user category])
+      .where(scheduled_date: Time.current..Time.current.since(1.year))
+    @past_events = current_user.participating_events.includes(%i[user category])
+      .where(scheduled_date: Time.current.ago(1.year)...Time.current).order(scheduled_date: :desc)
   end
 
   def update
