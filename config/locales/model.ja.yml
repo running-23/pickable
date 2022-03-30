@@ -13,12 +13,12 @@ ja:
       user:
         name: 名前
         email: メールアドレス
-        mattermost_id: マターモストID
         password: パスワード
         password_confirmation: パスワード確認
         accept_random: ランダム参加設定
         role: 権限
-        user_categories: 希望ジャンル
+        category_id: 希望ジャンル
+        hiyoconne_url: ひよコネリンク
       event:
         title: タイトル
         description: 詳細
@@ -38,7 +38,7 @@ ja:
         general: 一般
       accept_random:
         accepted: WELCOME
-        dynied: SLEEPING 
+        denied: SLEEPING 
     event:
       pickable_mode:
         all_applicant: 希望制

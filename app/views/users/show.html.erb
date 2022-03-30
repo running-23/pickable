@@ -1,0 +1,49 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h1 class="mb-5">My Page</h1>
+      <table>
+        <tr>
+          <td><%= image_tag current_user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %></td>
+        </tr>
+        <tr>
+          <th>名前</th>
+          <td><%= @user.name %></td>
+          <td><%= link_to 'edit', edit_user_path(@user) %></td>
+        </tr>
+        <tr>
+          <th>参加許可設定</th>
+          <td><%= @user.accept_random_i18n %></td>
+        </tr> 
+        <tr>
+          <th>設定カテゴリー</th>
+          <td>
+          <% @user.categories.each do |category| %>
+            <%= category.name %>
+          <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>ひよコネリンク</th>
+          <td>
+            <% if @user.hiyoconne_url.present? %>
+              <%= link_to 'ひよコネリンク', @user.hiyoconne_url %>
+            <% else %>
+              <p>ひよこねリンクは未登録です</p>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>参加イベント一覧</th>
+          <td> 
+             <% if @events.present? %>
+               <%= render partial: 'users/event', collection: @events %>
+             <% else %>
+               <p>参加しているイベントはありません</p>
+             <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

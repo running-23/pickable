@@ -15,7 +15,7 @@ class OauthsController < ApplicationController
         @user = create_from(provider)
         reset_session
         auto_login(@user)
-        redirect_to events_path, success: "#{provider.titleize}アカウントでログインしました。"
+        redirect_to edit_user_path(@user), success: '登録ありがとう！ついでに初期設定もよろしく！'
       rescue StandardError
         redirect_to root_path, danger: "#{provider.titleize}アカウントでのログインに失敗しました。"
       end
