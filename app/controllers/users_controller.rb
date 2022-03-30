@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 
   def show
     @future_events = current_user.participating_events.includes(%i[user category])
-      .where(scheduled_date: Time.current..Time.current.since(1.year))
+      .date_from_now_on
     @past_events = current_user.participating_events.includes(%i[user category])
-      .where(scheduled_date: Time.current.ago(1.year)...Time.current).order(scheduled_date: :desc)
+      .date_till_now
   end
 
   def update
