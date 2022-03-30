@@ -7,6 +7,7 @@
 #  crypted_password  :string
 #  email             :string           not null
 #  github_name       :string           not null
+#  hiyoconne_url     :string
 #  name              :string
 #  remote_avatar_url :string
 #  role              :integer          default("general"), not null
@@ -16,8 +17,9 @@
 #
 # Indexes
 #
-#  index_users_on_email        (email) UNIQUE
-#  index_users_on_github_name  (github_name) UNIQUE
+#  index_users_on_email          (email) UNIQUE
+#  index_users_on_github_name    (github_name) UNIQUE
+#  index_users_on_hiyoconne_url  (hiyoconne_url) UNIQUE
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
@@ -38,6 +40,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }, on: :update
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true
+  validates :hiyoconne_url, uniqueness: true
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }

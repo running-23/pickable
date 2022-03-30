@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :accept_random, category_ids: [])
+    params.require(:user).permit(:name, :hiyoconne_url, :accept_random, category_ids: [])
   end
 end

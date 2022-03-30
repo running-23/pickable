@@ -24,7 +24,14 @@
           </td>
         </tr>
         <tr>
-          <td><%= link_to 'ひよこねリンク', 'https://hiyoco-connect.herokuapp.com/' %></td>
+          <th>ひよこねリンク</th>
+          <td>
+            <% if @user.hiyoconne_url.present? %>
+            <%= link_to 'ひよこねリンク', @user.hiyoconne_url %>
+            <% else %>
+            <p>ひよこねリンクは未登録です</p>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th>参加イベント一覧</th>

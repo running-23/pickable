@@ -7,6 +7,7 @@
 #  crypted_password  :string
 #  email             :string           not null
 #  github_name       :string           not null
+#  hiyoconne_url     :string
 #  name              :string
 #  remote_avatar_url :string
 #  role              :integer          default("general"), not null
@@ -16,8 +17,9 @@
 #
 # Indexes
 #
-#  index_users_on_email        (email) UNIQUE
-#  index_users_on_github_name  (github_name) UNIQUE
+#  index_users_on_email          (email) UNIQUE
+#  index_users_on_github_name    (github_name) UNIQUE
+#  index_users_on_hiyoconne_url  (hiyoconne_url) UNIQUE
 #
 FactoryBot.define do
   factory :user do
