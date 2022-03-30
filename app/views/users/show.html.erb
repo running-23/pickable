@@ -24,12 +24,12 @@
           </td>
         </tr>
         <tr>
-          <th>ひよこねリンク</th>
+          <th>ひよコネリンク</th>
           <td>
             <% if @user.hiyoconne_url.present? %>
-            <%= link_to 'ひよこねリンク', @user.hiyoconne_url %>
+              <%= link_to 'ひよコネリンク', @user.hiyoconne_url %>
             <% else %>
-            <p>ひよこねリンクは未登録です</p>
+              <p>ひよこねリンクは未登録です</p>
             <% end %>
           </td>
         </tr>
@@ -37,9 +37,9 @@
           <th>参加イベント一覧</th>
           <td> 
              <% if @events.present? %>
-             <%= render partial: 'users/event', collection: @events %>
+               <%= render partial: 'users/event', collection: @events %>
              <% else %>
-             <p>参加しているイベントはありません</p>
+               <p>参加しているイベントはありません</p>
              <% end %>
           </td>
         </tr>
