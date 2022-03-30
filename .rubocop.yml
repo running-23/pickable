@@ -66,3 +66,7 @@ Metrics/BlockLength:
 # dependent: :destroyがなくても許容する
 Rails/HasManyOrHasOneDependent:
   Enabled: false
+
+# 複数行scopeに対してlamdaの省略記法「->」を使用可能にする
+Style/Lambda:
+  Enabled: false
