@@ -12,7 +12,7 @@
   <tbody>
       <tr>
         <td><%= event.title %></td>
-        <td><%= event.scheduled_date %></td>
+        <td><%= l event.scheduled_date, format: :long %></td>
         <td><%= event.place %></td>
         <td><%= event.user.name %></td>
         <td><%= event.category.name %></td>
