@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   def edit; end
 
   def show
-    @future_events = current_user.participating_events.includes(%i[user category]).date_from_now_on
-    @past_events = current_user.participating_events.includes(%i[user category]).date_till_now
+    @events_from_today = current_user.participating_events.includes(%i[user category]).from_today
+    @events_till_yesterday = current_user.participating_events.includes(%i[user category]).till_yesterday
   end
 
   def update

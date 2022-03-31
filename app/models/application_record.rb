@@ -1,7 +1,6 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
-  scope :date_from_now_on, -> { where('scheduled_date >= ?', Time.current) }
-  scope :date_till_now,
-        -> { where('scheduled_date < ?', Time.current).order(scheduled_date: :desc) }
+  scope :from_today, -> { where('scheduled_date >= ?', Time.current.beginning_of_day) }
+  scope :till_yesterday, -> { where('scheduled_date < ?', Time.current.beginning_of_day).order(scheduled_date: :desc) }
 end

@@ -34,10 +34,10 @@
           </td>
         </tr>
         <tr>
-          <th>参加予定のイベント</th>
+          <th>参加中・参加予定のイベント</th>
           <td> 
-            <% if @future_events.present? %>
-              <%= render partial: 'users/event', collection: @future_events %>
+            <% if @events_from_today.present? %>
+              <%= render partial: 'users/event', collection: @events_from_today %>
             <% else %>
               <p>参加予定のイベントはありません</p>
             <% end %>
@@ -53,8 +53,8 @@
         <tr>
           <th>参加したイベント</th>
           <td> 
-            <% if @past_events.present? %>
-              <%= render partial: 'users/event', collection: @past_events %>
+            <% if @events_till_yesterday.present? %>
+              <%= render partial: 'users/event', collection: @events_till_yesterday %>
             <% else %>
               <p>過去に参加したイベントはありません</p>
             <% end %>
