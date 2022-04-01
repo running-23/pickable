@@ -30,7 +30,7 @@ class Event < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :number_of_members, presence: true
+  validates :number_of_members, presence: true, numericality: { greater_than: 0 }
   validates :scheduled_date, presence: true
   validates :place, presence: true
   validate :past_scheduled_date
