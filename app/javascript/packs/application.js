@@ -12,8 +12,8 @@ import "channels"
 import "bootstrap"
 import "../stylesheets/application.scss"
 
-// JSファイルの読み込み
-import "./common"
+// JSファイルの読み込み（現段階では必要なし）
+// import "./common"
 
 Rails.start()
 Turbolinks.start()
