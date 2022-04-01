@@ -26,24 +26,14 @@
     <%= form.number_field :number_of_members %>
   </div>
 
-  <div class="field" id="applicants", style="display:none">
-    <%= form.label :number_of_applicants %>
-    <%= form.number_field :number_of_applicants %>
-  </div>
-
   <div class="field">
     <%= form.label :scheduled_date %>
-    <%= form.datetime_select :scheduled_date %>
+    <%= form.datetime_field :scheduled_date, min: Date.current %>
   </div>
 
   <div class="field">
     <%= form.label :place %>
     <%= form.text_field :place %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pickable_mode %>
-    <%= form.select :pickable_mode, Event.pickable_modes_i18n.invert, {}, id: 'selbox'  %>
   </div>
 
   <!-- 動作確認用最低限の実装 -->

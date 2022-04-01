@@ -2,18 +2,16 @@
 #
 # Table name: events
 #
-#  id                   :bigint           not null, primary key
-#  description          :string           not null
-#  number_of_applicants :integer          default(0), not null
-#  number_of_members    :integer          not null
-#  pickable_mode        :integer          not null
-#  place                :string           not null
-#  scheduled_date       :datetime         not null
-#  title                :string           not null
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  category_id          :bigint
-#  user_id              :bigint
+#  id                :bigint           not null, primary key
+#  description       :string           not null
+#  number_of_members :integer          not null
+#  place             :string           not null
+#  scheduled_date    :datetime         not null
+#  title             :string           not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  category_id       :bigint
+#  user_id           :bigint
 #
 # Indexes
 #
@@ -32,14 +30,14 @@ class Event < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :number_of_members, presence: true
-  validates :number_of_applicants, presence: true,
-                                   numericality: { less_than_or_equal_to: :number_of_members }
+  validates :number_of_members, presence: true, numericality: { greater_than: 0 }
   validates :scheduled_date, presence: true
   validates :place, presence: true
-  validates :pickable_mode, presence: true
+  validate :past_scheduled_date
 
-  enum pickable_mode: { all_applicant: 0, applicant_and_random: 1, random: 2 }
+  def past_scheduled_date
+    errors.add(:scheduled_date, 'は、現在時刻以降を入力して下さい') if scheduled_date < Time.current
+  end
 
   def created_by?(user)
     return false unless user

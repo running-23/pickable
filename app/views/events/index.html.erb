@@ -24,10 +24,8 @@
         <td><%= event.title %></td>
         <td><%= event.description %></td>
         <td><%= event.number_of_members %></td>
-        <td><%= event.number_of_applicants %></td>
         <td><%= l event.scheduled_date, format: :long %></td>
         <td><%= event.place %></td>
-        <td><%= event.pickable_mode_i18n %></td>
         <!-- 下記記述の場合おそらくn+1が起きるので、実装時は注意する -->
         <td><%= event.user.name %></td>
         <td><%= event.category.name %></td>
