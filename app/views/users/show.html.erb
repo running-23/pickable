@@ -29,20 +29,38 @@
             <% if @user.hiyoconne_url.present? %>
               <%= link_to 'ひよコネリンク', @user.hiyoconne_url %>
             <% else %>
-              <p>ひよこねリンクは未登録です</p>
+              <p>ひよコネリンクは未登録です</p>
             <% end %>
           </td>
         </tr>
         <tr>
-          <th>参加イベント一覧</th>
+          <th>参加中・参加予定のイベント</th>
           <td> 
-             <% if @events.present? %>
-               <%= render partial: 'users/event', collection: @events %>
-             <% else %>
-               <p>参加しているイベントはありません</p>
-             <% end %>
+            <% if @events_from_today.present? %>
+              <%= render partial: 'users/event', collection: @events_from_today %>
+            <% else %>
+              <p>参加予定のイベントはありません</p>
+            <% end %>
           </td>
         </tr>
+        <!--- 境界がわかりにくいため表示が見やすいようにラインで分割 -->
+        <tr> 
+          <th>----------------------
+          <td>
+            -----------------------------------------------------
+          </td>
+        </tr>
+        <tr>
+          <th>参加したイベント</th>
+          <td> 
+            <% if @events_till_yesterday.present? %>
+              <%= render partial: 'users/event', collection: @events_till_yesterday %>
+            <% else %>
+              <p>過去に参加したイベントはありません</p>
+            <% end %>
+          </td>
+        </tr>
+
       </table>
     </div>
   </div>

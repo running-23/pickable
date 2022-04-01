@@ -49,6 +49,7 @@ Metrics/LineLength:
   IgnoredPatterns: ['(\A|\s)#']
   Exclude:
     - "db/migrate/*.rb"
+    - "app/models/application_record.rb"
 
 # メソッドの行数を20行までにする
 Metrics/MethodLength:
@@ -65,4 +66,8 @@ Metrics/BlockLength:
 
 # dependent: :destroyがなくても許容する
 Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+# 複数行scopeに対してlamdaの省略記法「->」を使用可能にする
+Style/Lambda:
   Enabled: false
