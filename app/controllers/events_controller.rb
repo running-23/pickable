@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
 
   def index
-    @events = Event.includes(%i[user category]).from_today.page(params[:page]).per(10)
+    @events = Event.includes(%i[user category]).from_today.order(:scheduled_date).page(params[:page]).per(10)
   end
 
   def show
