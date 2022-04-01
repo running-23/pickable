@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_30_024219) do
+ActiveRecord::Schema.define(version: 2022_04_01_021843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2022_03_30_024219) do
     t.string "title", null: false
     t.string "description", null: false
     t.integer "number_of_members", null: false
-    t.integer "number_of_applicants", default: 0, null: false
     t.datetime "scheduled_date", null: false
     t.string "place", null: false
     t.integer "pickable_mode", null: false
