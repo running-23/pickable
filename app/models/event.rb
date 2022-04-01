@@ -33,6 +33,11 @@ class Event < ApplicationRecord
   validates :number_of_members, presence: true
   validates :scheduled_date, presence: true
   validates :place, presence: true
+  validate :past_scheduled_date
+
+  def past_scheduled_date
+    errors.add(:scheduled_date, 'は、現在時刻以降を入力して下さい') if scheduled_date < Time.current
+  end
 
   def created_by?(user)
     return false unless user
