@@ -50,7 +50,6 @@ Metrics/LineLength:
   Exclude:
     - "db/migrate/*.rb"
     - "app/models/application_record.rb"
-    - "app/controllers/events_controller.rb"
 
 # メソッドの行数を20行までにする
 Metrics/MethodLength:
