@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :scheduled_date %>
-    <%= form.datetime_select :scheduled_date %>
+    <%= form.datetime_field :scheduled_date, min: Date.current %>
   </div>
 
   <div class="field">
