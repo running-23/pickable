@@ -31,6 +31,8 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
+
+
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: lambda {
@@ -40,7 +42,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }, on: :update
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true
-  validates :hiyoconne_url, uniqueness: true
+  validates :hiyoconne_url, uniqueness: true, 
+                            format: { with: /\Ahttps:\/\/hiyoco-connect\.herokuapp\.com\/profiles\/\d{1,3}/,
+                                      message: 'が不正なURLです。誤解だったらゴメンね！'}
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }
