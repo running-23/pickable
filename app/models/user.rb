@@ -41,7 +41,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :accept_random, presence: true
   validates :hiyoconne_url, uniqueness: true,
-                            format: { with: %r{\Ahttps://hiyoco-connect\.herokuapp\.com/profiles/\d{1,3}},
+                            format: { with: %r{\Ahttps:\/\/hiyoco-connect\.herokuapp\.com\/profiles\/\d{1,3}},
                                       message: 'が不正なURLです。誤解だったらゴメンね！' }
 
   enum role: { general: 0, admin: 1 }
