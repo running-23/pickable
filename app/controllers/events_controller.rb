@@ -21,6 +21,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
+      current_user.participate(@event)
       redirect_to event_path(@event), success: 'Event was successfully created.'
     else
       render :new

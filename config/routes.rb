@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :events do
     get :participations, on: :collection
     resource :participation, only: %i[create destroy]
+    resource :pickable, only: %i[create]
   end
 
   post 'oauth/callback', to: 'oauths#callback'
