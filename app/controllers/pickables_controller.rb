@@ -11,7 +11,6 @@ class PickablesController < ApplicationController
       end
     end
     target_users.delete(current_user)
-    binding.irb
     # 開催希望人数 - 現在イベントに参加している人数 = Picableされる人数のユーザーをランダムで取得
     picked_users = target_users.sample(event.number_of_members - event.participations.length)
     # 抽出されたユーザーをイベントに参加させる
