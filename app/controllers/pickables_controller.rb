@@ -11,11 +11,9 @@ class PickablesController < ApplicationController
       end
     end
     target_users.delete(current_user)
-    # 配列内でシャッフル
-    shuffled_target_users = target_users.shuffle
-    # 開催希望人数 - 現在イベントに参加している人数 = Picableされる人数
-    # 配列の[0]番目〜[Pickableされる数]番目を取ってくる
-    picked_users = shuffled_target_users.slice(0, event.number_of_members - event.participations.length)
+    binding.irb
+    # 開催希望人数 - 現在イベントに参加している人数 = Picableされる人数のユーザーをランダムで取得
+    picked_users = target_users.sample(event.number_of_members - event.participations.length)
     # 抽出されたユーザーをイベントに参加させる
     picked_users.each do |picked_user|
       picked_user.participate(event)
