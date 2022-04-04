@@ -6,9 +6,7 @@ class PickablesController < ApplicationController
     target_users = []
     # Welocomeかつイベントの設定カテゴリーを含むユーザーを配列に入れる
     accepted_users.each do |user|
-      if user.categories.include?(event.category)
-        target_users << user
-      end
+      target_users << user if user.categories.include?(event.category)
     end
     target_users.delete(current_user)
     # 開催希望人数 - 現在イベントに参加している人数 = Picableされる人数のユーザーをランダムで取得
