@@ -48,8 +48,8 @@
   <%= link_to '参加', event_participation_path(@event), method: :post %>
 <% end %>
 </br>
-<% @event.participations.each do |event_participation|%>
-  <%# <%= image_tag event_participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
+<% @event.participations.each do |participation|%>
+  <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
   <%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %>
-  <%= event_participation.user.name %>
+  <%= participation.user.name %>
 <% end %>
