@@ -12,6 +12,9 @@ import "channels"
 import "bootstrap"
 import "../stylesheets/application.scss"
 
+// font-awesomeの読み込み
+import '@fortawesome/fontawesome-free/js/all'
+
 // JSファイルの読み込み（現段階では必要なし）
 // import "./common"
 
