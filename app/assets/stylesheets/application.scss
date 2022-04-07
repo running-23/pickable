@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+ /* font-awesomeの読み込み */
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+
+ /* フォント */
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
+* {
+  font-family: 'Coda Caption', sans-serif;;
+}
+
+/* メインカラー */
+.red {
+  color: #FF4273;
+}
+.orange {
+  color: #FF9D76;
+}
+.yellow {
+  color: #FFFDE1;
+}
+.skyblue {
+  color: #1FFFFF;
+}
+
+body {
+  background-color: #FFFDE1 !important;
+}
