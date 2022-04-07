@@ -12,9 +12,11 @@
           <p><%= event.number_of_members %></p>
           <p><%= l event.scheduled_date, format: :long %></p>
           <p><%= event.place %></p>
-          <p><%= link_to 'Show', event %></p>
-          <p><%= link_to 'Edit', edit_event_path(event) %></p>
-          <p><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% if event.created_by?(current_user) %>
+            <p><%= link_to 'Show', event %></p>
+            <p><%= link_to 'Edit', edit_event_path(event) %></p>
+            <p><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
         </div>
       </div>
     <% end %>
