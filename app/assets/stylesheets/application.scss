@@ -26,7 +26,7 @@
 
 /* メインカラー */
 .red {
-  color: #FF4273;
+  color: #FF4273 !important;
 }
 .orange {
   color: #FF9D76;
@@ -40,4 +40,12 @@
 
 body {
   background-color: #FFFDE1 !important;
+}
+
+.bg-orange {
+  background-color: #FF9D76;
+}
+
+.navbar-light {
+  color: #FF4273;
 }
