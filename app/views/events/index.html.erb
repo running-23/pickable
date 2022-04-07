@@ -5,18 +5,25 @@
 <div>
   <div>
     <% @events.each do |event| %>
-      <div class="card">
-        <div class="card-body">
-          <p><%= event.title %></p>
-          <p><%= event.description %></p>
-          <p><%= event.number_of_members %></p>
-          <p><%= l event.scheduled_date, format: :long %></p>
-          <p><%= event.place %></p>
-          <% if event.created_by?(current_user) %>
-            <p><%= link_to 'Show', event %></p>
-            <p><%= link_to 'Edit', edit_event_path(event) %></p>
-            <p><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-          <% end %>
+      <div class="card container">
+        <div class="card-body row flex">
+          <div class="col-3">
+            <div><%= l event.scheduled_date, format: :long %></div>
+          </div>
+          <div class="col-9">
+            <div><%= event.title %></div>
+            <div class="col-9 flex">
+              <div class="col-3"><%= event.number_of_members %></div>
+              <div class="col-3"><%= event.place %></div>
+              <div class="event-crud col-3">
+                <% if event.created_by?(current_user) %>
+                  <div><%= link_to 'Show', event %></div>
+                  <div><%= link_to 'Edit', edit_event_path(event) %></div>
+                  <div><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

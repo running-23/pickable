@@ -18,9 +18,9 @@
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 
  /* フォント */
-@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=RocknRoll+One&display=swap');
 * {
-  font-family: 'Coda Caption', sans-serif;;
+  font-family: 'Coda Caption', 'RocknRoll One', sans-serif;
 }
 
 /* メインカラー */
@@ -39,4 +39,9 @@
 
 body {
   background-color: #FFFDE1 !important;
+}
+
+// 共通
+.flex {
+  display: flex;
 }
