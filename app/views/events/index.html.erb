@@ -1,42 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1 class="red text-center">Events</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Number of members</th>
-      <th>Scheduled date</th>
-      <th>Place</th>
-      <th>User_name</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div>
+  <div>
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.number_of_members %></td>
-        <td><%= l event.scheduled_date, format: :long %></td>
-        <td><%= event.place %></td>
-        <!-- 下記記述の場合おそらくn+1が起きるので、実装時は注意する -->
-        <td><%= event.user.name %></td>
-        <td><%= event.category.name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="card">
+        <div class="card-body">
+          <p><%= event.title %></p>
+          <p><%= event.description %></p>
+          <p><%= event.number_of_members %></p>
+          <p><%= l event.scheduled_date, format: :long %></p>
+          <p><%= event.place %></p>
+          <p><%= link_to 'Show', event %></p>
+          <p><%= link_to 'Edit', edit_event_path(event) %></p>
+          <p><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <%= paginate @events %>
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Create Event', new_event_path %>
