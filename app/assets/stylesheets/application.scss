@@ -10,17 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
 
  /* font-awesomeの読み込み */
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 
  /* フォント */
-@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=RocknRoll+One&display=swap');
 * {
-  font-family: 'Coda Caption', sans-serif;;
+  font-family: 'Coda Caption', 'RocknRoll One', sans-serif;
 }
 
 /* メインカラー */
@@ -39,4 +39,24 @@
 
 body {
   background-color: #FFFDE1 !important;
+}
+
+// 共通
+.flex {
+  display: flex;
+}
+
+// フォントサイズ
+.fz25 {
+  font-size: 2.5rem;
+}
+.fz15 {
+  font-size: 1.5rem;
+}
+
+// ボタンモジュール
+.btn-outline-info {
+  color: #1FFFFF !important;
+  border-color: #1FFFFF !important;
+  border: 5px solid !important;
 }
