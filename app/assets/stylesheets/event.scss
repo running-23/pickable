@@ -1,8 +1,9 @@
 .card {
   font-size: 1.4rem;
+  color: black;
+  border: 1px solid  #FF9D76 !important;
 }
 
-// 一時的に非表示
-.event-crud {
-  display: none;
+.event-link {
+  text-decoration: none;
 }

@@ -2,39 +2,35 @@
 
 <h1 class="red text-center">Events</h1>
 
-<div>
-  <div>
-    <% @events.each do |event| %>
-      <div class="card container">
-        <div class="card-body row flex">
-          <div class="col-2 red">
+
+<div class="container">
+  <div class="text-end">
+    <%= link_to new_event_path do %>
+      <div class="btn btn-outline-info rounded-pill mb-3">Create Event</div>
+    <% end %>
+  </div>
+
+  <% @events.each do |event| %>
+    <%= link_to event_path(event), class: 'event-link' do %>
+      <div class="card row mb-3">
+        <div class="card-body flex">
+          <div class="col-2 red me-3">
             <div class="text-center">
               <div class="fz25"><%= event.scheduled_date.strftime('%m/%d') %></div>
               <div class="fz15"><%= event.scheduled_date.strftime('%H:%M') %></div>
             </div>
           </div>
-          <div class="col-10">
+          <div class="col-10 mt-2">
             <div class="h2"><%= event.title %></div>
-            <div class="col-10 flex">
+            <div class="col-10 flex mt-3">
               <div class="col-4">人数：<%= event.participations.size %>/<%= event.number_of_members %></div>
               <div class="col-4">場所：<%= event.place %></div>
-              <div class="event-crud col-2">
-                <% if event.created_by?(current_user) %>
-                  <div><%= link_to 'Show', event %></div>
-                  <div><%= link_to 'Edit', edit_event_path(event) %></div>
-                  <div><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-                <% end %>
-              </div>
             </div>
           </div>
         </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
 
 <%= paginate @events %>
-
-<br>
-
-<%= link_to 'Create Event', new_event_path %>
