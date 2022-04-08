@@ -1,4 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'picable事務局'
+  append_view_path "app/views/mailers"
+
+  default from: 'pickable事務局'
   layout 'mailer'
 end
