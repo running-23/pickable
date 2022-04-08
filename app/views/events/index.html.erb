@@ -14,10 +14,10 @@
             </div>
           </div>
           <div class="col-10">
-            <div class="h3"><%= event.title %></div>
+            <div class="h2"><%= event.title %></div>
             <div class="col-10 flex">
-              <div class="col-4"><%= event.number_of_members %></div>
-              <div class="col-4"><%= event.place %></div>
+              <div class="col-4">人数：<%= event.participations.size %>/<%= event.number_of_members %></div>
+              <div class="col-4">場所：<%= event.place %></div>
               <div class="event-crud col-2">
                 <% if event.created_by?(current_user) %>
                   <div><%= link_to 'Show', event %></div>
