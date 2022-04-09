@@ -8,7 +8,7 @@
     <div>
       <%= l @event.scheduled_date, format: :short %>
     </div>
-    <div class="btn btn-outline-success d-block w-25 mx-auto mt-4">
+    <div class="badge bg-category w-25 mx-auto mt-4">
       <%= @event.category.name %>
     </div>
     <div>
@@ -49,12 +49,14 @@
   </div>
 
   <div class="row text-center">
-    <% if @event.created_by?(current_user) %>
-      <%= link_to 'Edit', edit_event_path(@event) %>
-      <%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= button_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' } } %>
-    <% end %>
-    <%= link_to 'Back', events_path %>
+    <div class="col-12">
+      <% if @event.created_by?(current_user) %>
+        <%= button_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' } } %>
+        <%= link_to 'Edit', edit_event_path(@event) %>
+        <%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      <div><%= link_to 'Back', events_path %></div>
+    </div>
   </div>
 
 </div>
