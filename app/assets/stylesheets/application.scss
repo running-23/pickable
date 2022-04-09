@@ -41,9 +41,11 @@ body {
   background-color: #FFFDE1 !important;
 }
 
+// 背景をorangeに
 .bg-orange {
   background-color: #FF9D76;
-  
+}
+
 // 共通
 .flex {
   display: flex;
@@ -62,4 +64,21 @@ body {
   color: #1FFFFF !important;
   border-color: #1FFFFF !important;
   border: 5px solid !important;
+}
+
+// ランダム設定用
+.bg-welcome {
+  background-color: #FF9078;
+}
+
+.bg-sleeping {
+  background-color: #789EFF;
+}
+
+.bg-category {
+  background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%);
+}
+
+.caption {
+  font-size: 0.75rem;
 }
