@@ -14,17 +14,18 @@
     <%= link_to event_path(event), class: 'event-link' do %>
       <div class="card row mb-3">
         <div class="card-body flex">
-          <div class="col-2 red me-3">
+          <div class="col-2 red">
             <div class="text-center">
               <div class="fz25"><%= event.scheduled_date.strftime('%m/%d') %></div>
               <div class="fz15"><%= event.scheduled_date.strftime('%H:%M') %></div>
             </div>
           </div>
-          <div class="col-7 mt-2">
+          <div class="col-8 mt-2">
             <div class="h2 text-center"><%= event.title %></div>
+            <div class="btn btn-outline-success d-block w-25 mx-auto mt-4"><%= event.category.name %></div>
           </div>
-          <div class="col-3">
-            <div>人数： <%= event.participations.size %> / <%= event.number_of_members %></div>
+          <div class="col-2">
+            <div class="mt-1 mb-4">人数： <%= event.participations.size %> / <%= event.number_of_members %></div>
             <div>場所：<%= event.place %></div>
           </div>
         </div>
