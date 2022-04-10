@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_current_user, only: %i[edit update]
   before_action :set_user, only: %i[show]
-  
+
   def edit; end
 
   def show
