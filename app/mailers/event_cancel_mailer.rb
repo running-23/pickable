@@ -3,7 +3,7 @@ class EventCancelMailer < ApplicationMailer
   default bcc: -> { @email }
 
   def event_cancel
-    @url = "https://pickable.herokuapp.com/"
+    @url = 'https://pickable.herokuapp.com/'
     mail(subject: '参加していたイベントがキャンセルされました')
   end
 

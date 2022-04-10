@@ -66,12 +66,12 @@ group :development do
   # annotate ActiveRecordModel
   gem 'annotate'
   # formatter
+  gem 'letter_opener_web'
   gem 'rails_best_practices'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'letter_opener_web'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

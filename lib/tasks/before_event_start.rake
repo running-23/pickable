@@ -3,4 +3,4 @@ namespace :before_event_start do
   task mail_participating_event_users: :environment do
     BeforeEventStartMailer.before_event_start.deliver_now
   end
- end
+end

@@ -18,14 +18,14 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-require File.expand_path(File.dirname(__FILE__) + '/environment')
+require File.expand_path("#{File.dirname(__FILE__)}/environment")
 # cronを実行する環境変数
 rails_env = ENV['RAILS_ENV'] || :development
 # cronを実行する環境変数をセット
 set :environment, rails_env
 # cronのログの吐き出し場所
-set :output, "#{Rails.root}/log/cron.log"
+set :output, Rails.root.join('log/cron.log')
 # 毎日２時間毎に実行
 every 2.hours do
- rake 'before_event_start:mail_participating_event_users'
+  rake 'before_event_start:mail_participating_event_users'
 end
