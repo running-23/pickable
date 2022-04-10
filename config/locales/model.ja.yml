@@ -11,11 +11,11 @@ ja:
       created_at: 作成日時
       updated_at: 更新日時
       user:
-        name: 名前
+        name: ニックネーム
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
-        accept_random: ランダム参加設定
+        accept_random: ランダム設定
         role: 権限
         category_id: 希望ジャンル
         hiyoconne_url: ひよコネリンク

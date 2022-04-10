@@ -23,4 +23,5 @@ class Participation < ApplicationRecord
   belongs_to :event
 
   validates :user_id, uniqueness: { scope: :event_id }
+  
 end

@@ -14,7 +14,7 @@
  *= require_tree .
  */
 
- /* font-awesomeの読み込み */
+/* font-awesomeの読み込み */
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 
  /* フォント */
@@ -25,7 +25,7 @@
 
 /* メインカラー */
 .red {
-  color: #FF4273;
+  color: #FF4273 !important;
 }
 .orange {
   color: #FF9D76;
@@ -41,6 +41,11 @@ body {
   background-color: #FFFDE1 !important;
 }
 
+// 背景をorangeに
+.bg-orange {
+  background-color: #FF9D76;
+}
+
 // 共通
 .flex {
   display: flex;
@@ -54,9 +59,27 @@ body {
   font-size: 1.5rem;
 }
 
+.fz075 {
+  font-size: 0.75rem;
+}
+
 // ボタンモジュール
 .btn-outline-info {
   color: #1FFFFF !important;
   border-color: #1FFFFF !important;
   border: 5px solid !important;
+}
+
+// ランダム設定用
+.bg-welcome {
+  background-color: #FF9078;
+}
+
+.bg-sleeping {
+  background-color: #789EFF;
+}
+
+// カテゴリ用
+.bg-category {
+  background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%);
 }
