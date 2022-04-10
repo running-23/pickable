@@ -1,5 +1,5 @@
 class EventCancelMailer < ApplicationMailer
-  before_action :set_event_participating_user
+  before_action :set_participating_event_user
   default bcc: -> { @email }
 
   def event_cancel
@@ -9,7 +9,7 @@ class EventCancelMailer < ApplicationMailer
 
   private
 
-  def set_event_participating_user
+  def set_participating_event_user
     @event = params[:event]
     @email = @event.participating_users.pluck(:email)
   end
