@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="container events-show">
   <div class="row text-center">
-    <div>
-      <h2 class="red"><%= @event.title %></h2>
+    <div class="mt-4 mb-4">
+      <h2 class="red display-3"><%= @event.title %></h2>
     </div>
-    <div>
+    <div class="display-6">
       <%= l @event.scheduled_date, format: :short %>
     </div>
-    <div class="badge bg-category w-25 mx-auto mt-4">
+    <div class="h5 mt-1">
+      ＠  <%= @event.place %>
+    </div>
+    <div>
+    <div class="badge bg-category mx-auto col-1 fz12 mt-1">
       <%= @event.category.name %>
     </div>
-    <div>
-      <%= @event.place %>
-    </div>
-    <div>
-      <%= @event.description %>
-    </div>
-    <div>
+    <div class="mt-5">
       <strong>主催</strong>
       <%= @event.user.name %>
     </div>
+    <div class="h5 mt-1">
+      <%= @event.description %>
+    </div>
   </div>
 
-  <div class="row text-start">
+  <div class="row text-start mt-3">
     <div class="mb-2">
       メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
     </div>
