@@ -59,6 +59,10 @@ body {
   font-size: 1.5rem;
 }
 
+.fz075 {
+  font-size: 0.75rem;
+}
+
 // ボタンモジュール
 .btn-outline-info {
   color: #1FFFFF !important;
@@ -75,10 +79,7 @@ body {
   background-color: #789EFF;
 }
 
+// カテゴリ用
 .bg-category {
   background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%);
-}
-
-.caption {
-  font-size: 0.75rem;
 }
