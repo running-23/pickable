@@ -24,13 +24,15 @@
   </div>
 
   <div class="row text-start">
-    <div>
+    <div class="mb-2">
       メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
     </div>
     <% @event.participations.each do |participation|%>
-      <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
-      <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
-      <div><%= participation.user.name %></div>
+      <div class="col-1">
+        <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
+        <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
+        <div class="text-wrap text-break"><%= participation.user.name %></div>
+      </div>
     <% end %>
   </div>
 
