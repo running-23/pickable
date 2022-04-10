@@ -37,21 +37,21 @@
     <% end %>
   </div>
 
-  <div class="row text-center">
+  <div class="row text-center mt-4">
     <div class="col-12">
       <% if logged_in? && current_user.participating_events.include?(@event) %>
         <%= link_to event_participation_path(@event), method: :delete do %>
-          <div class="btn btn-outline-info rounded-pill">キャンセル</div>
+          <div class="btn btn-outline-info rounded-pill fz15">キャンセル</div>
         <% end %>
       <% else %>
         <%= link_to event_participation_path(@event), method: :post do %>
-          <div class="btn btn-outline-info rounded-pill">参加</div>
+          <div class="btn btn-outline-info rounded-pill fz25">参加</div>
         <% end %>
       <% end %>
     </div>
   </div>
 
-  <div class="row text-center">
+  <div class="row text-center mt-2">
     <div class="col-12">
       <% if @event.created_by?(current_user) %>
         <%= button_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' } } %>
