@@ -2,16 +2,13 @@
 // events#index
 .card {
   font-size: 1.4rem;
+  border: 3px solid  #FF9D76 !important;
+  background-color: #ffe9e0 !important;
+}
+.card-body {
   color: black;
-  border: 1px solid  #FF9D76 !important;
 }
 
 .event-link {
   text-decoration: none;
 }
-
-
-// events#show
-// .events-show {
-//   font-size: 1.4rem;
-// }

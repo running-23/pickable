@@ -1,51 +1,58 @@
-<%= form_with(model: event) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% event.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="container text-center">
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <%= form_with(model: event) do |form| %>
+      <% if event.errors.any? %>
+        <div id="error_explanation" class="row mx-auto col-4">
+          <ul>
+            <% event.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+      <div class="col-3 mx-auto mb-4">
+        <div class="field">
+          <div class="red text-start"><%= form.label :title %></div>
+          <%= form.text_field :title %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :number_of_members %>
-    <%= form.number_field :number_of_members %>
-  </div>
+      <div class="col-3 mx-auto mb-4">
+        <div class="field">
+          <div class="red text-start"><%= form.label :description %></div>
+          <%= form.text_area :description %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :scheduled_date %>
-    <%= form.datetime_field :scheduled_date, min: Date.current %>
-  </div>
+      <div class="col-3 mx-auto mb-4">
+        <div class="field">
+          <div class="red text-start"><%= form.label :number_of_members %></div>
+          <%= form.number_field :number_of_members %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place %>
-  </div>
+      <div class="col-3 mx-auto mb-4">
+        <div class="field">
+          <div class="red text-start"><%= form.label :scheduled_date %></div>
+          <%= form.datetime_field :scheduled_date, min: Date.current %>
+        </div>
+      </div>
 
-  <!-- 動作確認用最低限の実装 -->
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.all, :id, :name %>
-  </div>
+      <div class="col-3 mx-auto mb-4">
+        <div class="field">
+          <div class="red text-start"><%= form.label :place %></div>
+          <%= form.text_field :place %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :name %>
-  </div>
+      <div class="field">
+        <%= form.label :category_id %>
+        <%= form.collection_select :category_id, Category.all, :id, :name %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+</div>
