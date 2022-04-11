@@ -94,13 +94,12 @@ body {
   margin-top: 4rem;
 }
 
-// 未ホバー時に透明度を下げる
+// 未ホバー時に透明度を下げてホバー時にオリジナルに
 .hover-target {
   opacity: .8;
-}
-
-.hover-target:hover {
-  opacity: 1;
+  &:hover{
+    opacity: 1;
+  }
 }
 
 // aタグの下線、色、ホバー時の色を無効にする
