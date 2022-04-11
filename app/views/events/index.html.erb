@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="red text-center">Events</h1>
+<h1 class="display-3 red text-center mt-4">Events</h1>
 
 
 <div class="container">
-  <div class="text-end">
-    <%= link_to new_event_path do %>
-      <div class="btn btn-outline-info rounded-pill mb-3">Create Event</div>
-    <% end %>
+  <div class="col-9 mx-auto">
+    <div class="text-end">
+      <%= link_to new_event_path do %>
+        <div class="btn btn-outline-info rounded-pill mb-3">Create Event</div>
+      <% end %>
+    </div>
   </div>
 
   <% @events.each do |event| %>
