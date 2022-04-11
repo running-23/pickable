@@ -16,7 +16,7 @@
       <%= @event.category.name %>
     </div>
     <div class="mt-5">
-      <strong>主催</strong>
+      <strong>主催：</strong>
       <%= @event.user.name %>
     </div>
     <div class="h5 mt-1">
@@ -24,17 +24,30 @@
     </div>
   </div>
 
-  <div class="row text-start mt-3">
+  <div class="row text-center mt-3">
     <div class="mb-2">
       メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
     </div>
     <% @event.participations.each do |participation|%>
-      <div class="col-1">
+      <div class="col-1 mx-auto">
         <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
         <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
         <div class="text-wrap text-break"><%= participation.user.name %></div>
       </div>
     <% end %>
+  </div>
+
+    <div class="row text-center mt-4">
+    <div class="col-12">
+      <% if @event.created_by?(current_user) %>
+        <%= link_to event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' } } do %>
+          <div class="btn btn-outline-info-pick rounded-pill fz25">Pickable</div>
+        <% end %>
+
+        <div><%= link_to 'Edit', edit_event_path(@event) %></div>
+        <div><%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      <% end %>
+    </div>
   </div>
 
   <div class="row text-center mt-4">
@@ -51,15 +64,6 @@
     </div>
   </div>
 
-  <div class="row text-center mt-2">
-    <div class="col-12">
-      <% if @event.created_by?(current_user) %>
-        <%= button_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' } } %>
-        <%= link_to 'Edit', edit_event_path(@event) %>
-        <%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <div><%= link_to 'Back', events_path %></div>
-    </div>
-  </div>
+  <div class="row"><%= link_to 'Back', events_path %></div>
 
 </div>
