@@ -22,13 +22,13 @@
               <div class="fz15"><%= event.scheduled_date.strftime('%H:%M') %></div>
             </div>
           </div>
-          <div class="col-6 mt-2">
-            <div class="h2 text-center"><%= event.title %></div>
-            <div class="badge bg-category d-block w-25 mx-auto mt-4"><%= event.category.name %></div>
+          <div class="col-6 text-center mt-2">
+            <div class="h2"><%= event.title %></div>
+            <div class="mt-3">＠  <%= event.place %></div>
           </div>
           <div class="col-3">
-            <div class="mt-1 mb-4">人数： <%= event.participations.size %> / <%= event.number_of_members %></div>
-            <div>場所：<%= event.place %></div>
+            <div class="mt-2 mb-4">人数： <%= event.participations.size %> / <%= event.number_of_members %></div>
+            <div class="badge bg-category"><%= event.category.name %></div>
           </div>
         </div>
       <% end %>
