@@ -48,18 +48,20 @@
   </div>
 
   <!-- 希望ジャンル -->
-  <div class="row justify-content-center mt-5 h4">
-    <div class="col-6 orange text-end">
-      希望ジャンル　　　　
+  <% if @user.accepted? %>
+    <div class="row justify-content-center mt-5 h4">
+      <div class="col-6 orange text-end">
+        希望ジャンル　　　　
+      </div>
+      <div class="col-5">
+        <% @user.categories.each do |category| %>
+          <span class="badge bg-category mx-2">
+            <%= category.name %>
+          </span>
+        <% end %>
+      </div>
     </div>
-    <div class="col-5">
-      <% @user.categories.each do |category| %>
-        <span class="badge bg-category mx-2">
-          <%= category.name %>
-        </span>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 
   <!-- ひよコネリンク -->
   <div class="row justify-content-center mt-5 h4">
