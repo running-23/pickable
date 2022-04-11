@@ -16,7 +16,7 @@ import "../stylesheets/application.scss"
 import '@fortawesome/fontawesome-free/js/all'
 
 // JSファイルの読み込み（現段階では必要なし）
-// import "./common"
+import "./common"
 
 Rails.start()
 Turbolinks.start()

@@ -71,15 +71,42 @@ body {
 }
 
 // ランダム設定用
-.bg-welcome {
+.accepted {
   background-color: #FF9078;
 }
 
-.bg-sleeping {
+.denied {
   background-color: #789EFF;
 }
 
 // カテゴリ用
 .bg-category {
   background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%);
+}
+
+// バリデーションエラーによるレイアウト崩れを防ぐ
+.field_with_errors {
+  display: contents;
+}
+
+// マージントップの制御
+.mt-7 {
+  margin-top: 4rem;
+}
+
+// 未ホバー時に透明度を下げてホバー時にオリジナルに
+.hover-target {
+  opacity: .8;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+// aタグの下線、色、ホバー時の色を無効にする
+.simple-a-tag {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+  }
 }
