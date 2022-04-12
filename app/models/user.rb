@@ -17,9 +17,8 @@
 #
 # Indexes
 #
-#  index_users_on_email          (email) UNIQUE
-#  index_users_on_github_name    (github_name) UNIQUE
-#  index_users_on_hiyoconne_url  (hiyoconne_url) UNIQUE
+#  index_users_on_email        (email) UNIQUE
+#  index_users_on_github_name  (github_name) UNIQUE
 #
 class User < ApplicationRecord
   authenticates_with_sorcery!
@@ -42,7 +41,7 @@ class User < ApplicationRecord
   validates :accept_random, presence: true
   validates :hiyoconne_url, uniqueness: true,
                             format: { with: %r{\A\z|\Ahttps://hiyoco-connect\.herokuapp\.com/profiles/\d{1,3}\Z},
-                                      message: 'が不正なURLです。誤解だったらゴメンね！' }
+                                      message: 'が不正なURLです。誤解だったらゴメンね！' }, allow_blank: true
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }
