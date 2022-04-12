@@ -11,22 +11,22 @@
       <% end %>
 
       <div class="row justify-content-center my-5 h5">
-        <div class=" col-3 orange text-end">
+        <div class=" col-2 orange text-start">
           <%= form.label :title, class: "col-form-label" %>
         </div>
-        <%= form.text_field :title, class: "col-form-control offset-1 col-4" %>
+        <%= form.text_field :title, class: "col-form-control col-4" %>
       </div>
 
       <div class="row justify-content-center mb-5 h5">
-        <%= form.label :description, class: "col-form-label col-3 offset-2 orange text-end" %>
-        <%= form.text_area :description, class: "col-form-control col-6 offset-1 h6", rows: 4 %>
+        <%= form.label :description, class: "col-form-label col-2 offset-2 orange text-start" %>
+        <%= form.text_area :description, class: "col-form-control col-6 h6", rows: 4 %>
       </div>
 
-      <div class="row justify-content-center mb-5 h5" id="select-category">
-        <div class="col-2 orange text-start offset-3">
-          <%= form.label :category_id, class: "col-form-label align-middle" %>
+      <div class="row justify-content-center mb-5 h5 me-5" id="select-category">
+        <div class="col-form-label col-2 orange text-start offset-2">
+          <%= form.label :category_id %>
         </div>
-        <div class="col-6 my-auto row h4">
+        <div class="col-form-control col-6 row h4">
           <%= form.collection_check_boxes(:category_id, Category.all, :id, :name) do |b| %>
             <%= b.check_box class:"my-auto col-2" do %>
               <%= b.check_box + b.text %>
@@ -39,18 +39,18 @@
       </div>
 
       <div class="row justify-content-center mb-5 h5">
-        <%= form.label :number_of_members, class: "col-form-label col-3 offset-2 orange text-end" %>
-        <%= form.number_field :number_of_members, class: "col-form-control col-6 offset-1 h6" %>
+        <%= form.label :number_of_members, class: "col-form-label col-2 offset-2 orange text-start" %>
+        <%= form.number_field :number_of_members, class: "col-form-control col-6 h6" %>
       </div>
 
       <div class="row justify-content-center mb-5 h5">
-        <%= form.label :scheduled_date, class: "col-form-label col-3 offset-2 orange text-end" %>
-        <%= form.datetime_field :scheduled_date, min: Date.current, class: "col-form-control col-6 offset-1 h6" %>
+        <%= form.label :scheduled_date, class: "col-form-label col-2 offset-2 orange text-start" %>
+        <%= form.datetime_field :scheduled_date, min: Date.current, class: "col-form-control col-6 h6" %>
       </div>
 
       <div class="row justify-content-center mb-5 h5">
-        <%= form.label :place, class: "col-form-label col-3 offset-2 orange text-end" %>
-        <%= form.text_field :place, min: Date.current, class: "col-form-control col-6 offset-1 h6" %>
+        <%= form.label :place, class: "col-form-label col-2 offset-2 orange text-start" %>
+        <%= form.text_field :place, min: Date.current, class: "col-form-control col-6 h6" %>
       </div>
 
       <div class="row justify-content-center my-5 h5">
