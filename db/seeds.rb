@@ -15,7 +15,7 @@
     accept_random: 0,
     role: 0,
     github_name: "Git#{n + 1}",
-    hiyoconne_url: "https://hiyoco-connect.herokuapp.com/profiles/10#{n + 1}"
+    hiyoconne_url: "https://hiyoco-connect.herokuapp.com/profiles/2#{n + 1}"
   )
 end
 
@@ -28,7 +28,7 @@ User.create!(
     accept_random: 1,
     role: 0,
     github_name: "Hub#{n + 1}",
-    hiyoconne_url: "https://hiyoco-connect.herokuapp.com/profiles/20#{n + 1}"
+    hiyoconne_url: "https://hiyoco-connect.herokuapp.com/profiles/5#{n + 1}"
   )
 end
 

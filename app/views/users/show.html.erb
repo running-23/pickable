@@ -1,67 +1,100 @@
-<div class="container pt-3">
-  <div class="row">
-    <div class="col-md-10 offset-md-1">
-      <h1 class="mb-5">My Page</h1>
-      <table>
-        <tr>
-          <td><%= image_tag current_user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %></td>
-        </tr>
-        <tr>
-          <th>名前</th>
-          <td><%= @user.name %></td>
-          <td><%= link_to 'edit', edit_user_path(@user) %></td>
-        </tr>
-        <tr>
-          <th>参加許可設定</th>
-          <td><%= @user.accept_random_i18n %></td>
-        </tr> 
-        <tr>
-          <th>設定カテゴリー</th>
-          <td>
-          <% @user.categories.each do |category| %>
-            <%= category.name %>
-          <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th>ひよコネリンク</th>
-          <td>
-            <% if @user.hiyoconne_url.present? %>
-              <%= link_to 'ひよコネリンク', @user.hiyoconne_url %>
-            <% else %>
-              <p>ひよコネリンクは未登録です</p>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th>参加中・参加予定のイベント</th>
-          <td> 
-            <% if @events_from_today.present? %>
-              <%= render partial: 'users/event', collection: @events_from_today %>
-            <% else %>
-              <p>参加予定のイベントはありません</p>
-            <% end %>
-          </td>
-        </tr>
-        <!--- 境界がわかりにくいため表示が見やすいようにラインで分割 -->
-        <tr> 
-          <th>----------------------
-          <td>
-            -----------------------------------------------------
-          </td>
-        </tr>
-        <tr>
-          <th>参加したイベント</th>
-          <td> 
-            <% if @events_till_yesterday.present? %>
-              <%= render partial: 'users/event', collection: @events_till_yesterday %>
-            <% else %>
-              <p>過去に参加したイベントはありません</p>
-            <% end %>
-          </td>
-        </tr>
+<!-- ページタイトル -->
+<div class="container justify-content-center text-center my-5">
+  <div class="row py-3">
+    <div class="col">
+      <h1 class="red">My Page</h1>
+    </div>
+  </div>
+</div>
 
-      </table>
+<!-- ユーザー情報 -->
+<div class="container my-5">
+  <!-- アバター -->
+  <div class="row justify-content-center mt-5">
+    <div class="col-auto mb-5">
+      <%= image_tag @user.remote_avatar_url, class: 'rounded-circle border', size: '200x200' %>
+    </div>
+  </div>
+
+  <% if current_user == @user %>
+    <div class="row justify-content-center my-1">
+      <%= link_to edit_user_path(@user), class: "col-auto h2 hover-target text-center simple-a-tag" do %>
+        <i class="fa-solid fa-gear "></i>
+        <p class="h6 ">edit</p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <!-- ニックネーム -->
+  <div class="row justify-content-center mt-5 h4">
+    <div class="col-auto orange">
+      ニックネーム
+    </div>
+    <div class="col-auto offset-1">
+      <%= @user.name %>
+    </div>
+  </div>
+
+  <!-- ランダム設定 -->
+  <div class="row justify-content-center mt-5 h4">
+    <div class="col-auto orange">
+      ランダム設定
+    </div>
+    <div class="col-auto offset-1">
+      <h4 class="badge rounded-pill h4 <%= @user.accept_random %>" >
+        <%= @user.accept_random_i18n %>
+      </h4>
+    </div>
+  </div>
+
+  <!-- 希望ジャンル -->
+  <% if @user.accepted? %>
+    <div class="row justify-content-center mt-5 h4">
+      <div class="col-6 orange text-end">
+        希望ジャンル　　　　
+      </div>
+      <div class="col-5">
+        <% @user.categories.each do |category| %>
+          <span class="badge bg-category mx-2">
+            <%= category.name %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- ひよコネリンク -->
+  <div class="row justify-content-center mt-5 h4">
+    <div class="col-6 orange my-auto text-end">
+      ひよコネのプロフィール　　　
+    </div>
+    <div class="col-5 text-start ms-5 hover">
+      <% if @user.hiyoconne_url.present? %>
+        <%= link_to @user.hiyoconne_url, target: "_blank", rel: "noopener noreferrer" do %>
+          <%= image_tag 'hiyoconne_icon.png', class: 'rounded-circle hover-target', size: '50x60' %>
+        <% end %>
+        <p class="fz075 text-muted">作成済み</p>
+      <% else %>
+        <%= image_tag 'no_hiyoco_icon.png', size: '60x60' %>
+        <p class="fz075 text-muted">　未作成</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- ユーザーの参加イベント -->
+<div class='container mt-7'>
+  <div class="row justify-content-center">
+    <h3 class="col-auto red">
+      参加中・参加予定のイベント
+    </div>
+  </div>
+</div>
+
+<div class='container mt-7'>
+  <div class="row justify-content-center">
+    <h3 class="col-auto red">
+      参加したイベント
     </div>
   </div>
 </div>
