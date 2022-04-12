@@ -25,6 +25,7 @@
 #
 class Event < ApplicationRecord
   has_many :participations, dependent: :destroy
+  has_many :participating_users, through: :participations, source: :user
   belongs_to :user
   belongs_to :category
 

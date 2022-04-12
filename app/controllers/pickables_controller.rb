@@ -15,6 +15,7 @@ class PickablesController < ApplicationController
     picked_users.each do |picked_user|
       picked_user.participate(event)
     end
+    PickableMailer.with(user: picked_users, event: event).report_pickable.deliver_now
     redirect_to event, success: 'Pickableを発動しました'
   end
 end

@@ -13,6 +13,7 @@ class OauthsController < ApplicationController
     else
       begin
         @user = create_from(provider)
+        UserMailer.with(user: @user).welcome_email.deliver_now
         reset_session
         auto_login(@user)
         redirect_to edit_user_path(@user), success: '登録ありがとう！ついでに初期設定もよろしく！'

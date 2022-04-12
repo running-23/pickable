@@ -38,6 +38,9 @@ gem 'sorcery'
 # ページネーション
 gem 'kaminari'
 
+# バッチ処理
+gem 'whenever', require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]\
@@ -63,6 +66,7 @@ group :development do
   # annotate ActiveRecordModel
   gem 'annotate'
   # formatter
+  gem 'letter_opener_web'
   gem 'rails_best_practices'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
