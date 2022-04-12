@@ -1,9 +1,8 @@
-<div class="container text-center">
-
+<div class="container justify-content-center text-center">
+  <div class="row">
     <%= form_with(model: event) do |form| %>
       <% if event.errors.any? %>
-        <div id="error_explanation" class="row mx-auto col-4">
-          <ul>
+        <div id="error_explanation">
             <% event.errors.each do |error| %>
               <li><%= error.full_message %></li>
             <% end %>
@@ -11,48 +10,54 @@
         </div>
       <% end %>
 
-      <div class="col-3 mx-auto mb-4">
-        <div class="field">
-          <div class="red text-start"><%= form.label :title %></div>
-          <%= form.text_field :title %>
+      <div class="row justify-content-center my-5 h5">
+        <div class=" col-2 orange text-end">
+          <%= form.label :title, class: "col-form-label" %>
+        </div>
+        <%= form.text_field :title, class: "col-form-control offset-1 col-3" %>
+      </div>
+
+      <div class="row justify-content-center mb-5 h5">
+        <%= form.label :description, class: "col-form-label col-3 offset-2 orange text-end" %>
+        <%= form.text_area :description, class: "col-form-control col-6 offset-1 h6", rows: 4 %>
+      </div>
+
+      <div class="row justify-content-center mb-5 h5" id="select-category">
+        <div class="col-2 orange text-start offset-3">
+          <%= form.label :category_id, class: "col-form-label align-middle" %>
+        </div>
+        <div class="col-6 my-auto row h4">
+          <%= form.collection_check_boxes(:category_id, Category.all, :id, :name) do |b| %>
+            <%= b.check_box class:"my-auto col-2" do %>
+              <%= b.check_box + b.text %>
+            <% end %>
+            <%= b.label class:"badge bg-category my-1 col-2" do %>
+              <%= b.label {b.text} %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
-      <div class="col-3 mx-auto mb-4">
-        <div class="field">
-          <div class="red text-start"><%= form.label :description %></div>
-          <%= form.text_area :description %>
+      <div class="row justify-content-center mb-5 h5">
+        <%= form.label :number_of_members, class: "col-form-label col-3 offset-2 orange text-end" %>
+        <%= form.number_field :number_of_members, class: "col-form-control col-6 offset-1 h6" %>
+      </div>
+
+      <div class="row justify-content-center mb-5 h5">
+        <%= form.label :scheduled_date, class: "col-form-label col-3 offset-2 orange text-end" %>
+        <%= form.datetime_field :scheduled_date, min: Date.current, class: "col-form-control col-6 offset-1 h6" %>
+      </div>
+
+      <div class="row justify-content-center mb-5 h5">
+        <%= form.label :place, class: "col-form-label col-3 offset-2 orange text-end" %>
+        <%= form.text_field :place, min: Date.current, class: "col-form-control col-6 offset-1 h6" %>
+      </div>
+
+      <div class="row justify-content-center my-5 h5">
+        <div class="col-auto">
+          <%= form.submit class: 'btn btn-outline-info rounded-pill' %>
         </div>
-      </div>
-
-      <div class="col-3 mx-auto mb-4">
-        <div class="field">
-          <div class="red text-start"><%= form.label :number_of_members %></div>
-          <%= form.number_field :number_of_members %>
-        </div>
-      </div>
-
-      <div class="col-3 mx-auto mb-4">
-        <div class="field">
-          <div class="red text-start"><%= form.label :scheduled_date %></div>
-          <%= form.datetime_field :scheduled_date, min: Date.current %>
-        </div>
-      </div>
-
-      <div class="col-3 mx-auto mb-4">
-        <div class="field">
-          <div class="red text-start"><%= form.label :place %></div>
-          <%= form.text_field :place %>
-        </div>
-      </div>
-
-      <div class="field">
-        <%= form.label :category_id %>
-        <%= form.collection_select :category_id, Category.all, :id, :name %>
-      </div>
-
-      <div class="actions">
-        <%= form.submit %>
       </div>
     <% end %>
+  </div>
 </div>
