@@ -3,7 +3,7 @@ class PickableMailer < ApplicationMailer
 
   def report_pickable
     @event = params[:event]
-    @url = 'https://pickable.herokuapp.com/'
+    @url = Rails.application.credentials.gmail[:url]
     mail(subject: 'Pickableされました！')
   end
 end

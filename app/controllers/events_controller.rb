@@ -37,7 +37,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    EventCancelMailer.with(event: @event).event_cancel.deliver_later
+    EventCancelMailer.with(event: @event).event_cancel.deliver_now
     @event.destroy
     redirect_to events_path, success: 'Event was successfully destroyed.'
   end

@@ -4,7 +4,7 @@ class BeforeEventStartMailer < ApplicationMailer
   default bcc: -> { @email }
 
   def before_event_start
-    @url = 'https://pickable.herokuapp.com/'
+    @url = Rails.application.credentials.gmail[:url]
     mail(subject: '参加したイベントが開始されます！')
   end
 
