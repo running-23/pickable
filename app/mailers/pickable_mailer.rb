@@ -4,6 +4,6 @@ class PickableMailer < ApplicationMailer
   def report_pickable
     @event = params[:event]
     @url = Rails.application.credentials.gmail[:url]
-    mail(subject: 'Pickableされました！')
+    mail(subject: 'イベントにPickされました！')
   end
 end
