@@ -19,12 +19,12 @@
       <strong>主催：</strong>
       <%= @event.user.name %>
     </div>
-    <div class="h5 mt-1">
+    <div class="h4 text-center mx-auto mt-2 col-8">
       <%= @event.description %>
     </div>
   </div>
 
-  <div class="row text-center mt-3">
+  <div class="row text-center mt-5">
     <div class="mb-2">
       メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
     </div>
