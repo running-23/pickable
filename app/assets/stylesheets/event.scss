@@ -5,16 +5,16 @@
   border: 4px solid  #FF9D76 !important;
   background-color: #fff !important;
   box-shadow: 0 7px 14px rgba(50,50,93,.2), 0 3px 6px rgba(0,0,0,.1);
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.6), 0 3px 6px rgba(0,0,0,.3);
+    transition: all .3s;
+  }
 }
 .card-body {
   color: black;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 7px 14px rgba(50,50,93,.6), 0 3px 6px rgba(0,0,0,.2);
-  transition: all .3s;
-}
 
 .event-link {
   text-decoration: none;
