@@ -1,30 +1,28 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= stylesheet_link_tag "mailer" %>
   </head>
   <body>
-    <h1>下記のイベントにPickされました！</h1>
-    <table>
-      <tr>
-        <th>タイトル</th>
-        <td><%= @event.title %></td>
-      </tr>
-      <tr>
-        <th>詳細</th>
-        <td><%= @event.description %></td>
-      </tr>
-      <tr>
-        <th>開催日時</th>
-        <td><%= l @event.scheduled_date, format: :long %></td>
-      </tr>
-      <tr>
-        <th>開催場所</th>
-        <td><%= @event.place %></td>
-      </tr>
-    </table> 
-    <h4>このイベントやりたかった？ そう思ったら主催してみよう！</h4>
-    <p>参加予定のイベントはMypageより確認できます!</p>
-    <p><%= link_to 'Pickable', @url %></p>
-    <p>Pickable事務局</p>
+    <h2 class="pb40">下記のイベントにPickされました！</h2>
+      <div>
+        <p class="fwb">タイトル</p>
+        <p class="pl20"><%= @event.title %></p>
+      </div>
+      <div>
+        <p class="fwb">詳細</p>
+        <p class="pl20"><%= @event.description %></p>
+      </div>
+      <div>
+        <p class="fwb">開催日時</p>
+        <p class="pl20"><%= l @event.scheduled_date, format: :long %></p>
+      </div>
+      <div class="pb40">
+        <p class="fwb">開催場所</p>
+        <p class="pl20"><%= @event.place %></p>
+      </div>
+      <h4>このイベントやりたかった？ そう思ったら主催してみよう！</h4>
+      <p>参加予定のイベントはMypageより確認できます！</p>
+      <p><%= link_to 'Pickable', @url %></p>
   </body>
 </html>
