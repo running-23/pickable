@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_01_022056) do
+ActiveRecord::Schema.define(version: 2022_04_12_054124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2022_04_01_022056) do
     t.string "hiyoconne_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["github_name"], name: "index_users_on_github_name", unique: true
-    t.index ["hiyoconne_url"], name: "index_users_on_hiyoconne_url", unique: true
   end
 
   add_foreign_key "events", "categories"
