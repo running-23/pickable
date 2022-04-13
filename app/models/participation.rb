@@ -26,6 +26,6 @@ class Participation < ApplicationRecord
   validate :limit
 
   def limit
-    raise ActiveRecord::RecordInvalid if event.participations.size >= event.number_of_members
+    raise ActiveRecord::RecordInvalid if event.participations.length >= event.number_of_members
   end
 end
