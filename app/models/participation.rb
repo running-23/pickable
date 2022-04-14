@@ -23,4 +23,9 @@ class Participation < ApplicationRecord
   belongs_to :event
 
   validates :user_id, uniqueness: { scope: :event_id }
+  validate :limit
+
+  def limit
+    raise ActiveRecord::RecordInvalid if event.participations.length >= event.number_of_members
+  end
 end
