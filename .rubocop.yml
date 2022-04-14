@@ -71,3 +71,8 @@ Rails/HasManyOrHasOneDependent:
 # 複数行scopeに対してlamdaの省略記法「->」を使用可能にする
 Style/Lambda:
   Enabled: false
+
+# if文を許容する
+Style/GuardClause:
+  Exclude:
+    - "app/models/event.rb"
