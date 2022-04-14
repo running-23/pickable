@@ -1,55 +1,77 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<div class="container events-show">
+  <div class="row text-center">
+    <div class="mt-4 mb-4">
+      <h2 class="red display-3"><%= @event.title %></h2>
+    </div>
+    <div class="display-6">
+      <%= l @event.scheduled_date, format: :short %>
+    </div>
+    <div class="h5 mt-1">
+      ＠  <%= @event.place %>
+    </div>
+    <div>
+    <div class="badge bg-category mx-auto col-1 fz12 mt-1">
+      <%= @event.category.name %>
+    </div>
+    <div class="mt-5">
+      <strong>主催：</strong>
+      <%= @event.user.name %>
+    </div>
+    <div class="h4 text-center mx-auto mt-2 col-8">
+      <%= @event.description %>
+    </div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+  <div class="row text-center mt-5">
+    <div class="mb-2">
+      メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
+    </div>
+    <% @event.participations.each do |participation|%>
+      <div class="col-1 mx-auto">
+        <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
+        <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
+        <div class="text-wrap text-break"><%= participation.user.name %></div>
+      </div>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Number of members:</strong>
-  <%= @event.number_of_members %>
-</p>
+    <div class="row text-center mt-4">
+    <div class="col-12">
+      <% if @event.created_by?(current_user) %>
+        <%= link_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts == 1 }" } %>
 
-<p>
-  <strong>Scheduled date:</strong>
-  <%= l @event.scheduled_date, format: :long %>
-</p>
+        <div class="row justify-content-center mt-3">
+          <div class="col-1">
+            <%= link_to edit_event_path(@event), class: "col-auto h2 hover-target text-center simple-a-tag" do %>
+              <i class="fa-solid fa-gear"></i>
+              <p class="h6 ">edit</p>
+            <% end %>
+          </div>
+          <div class="col-1">
+            <%= link_to event_path, method: :delete, data: { confirm: 'イベントを削除してよろしいですか？' }, class: 'col-auto h2 hover-target text-center simple-a-tag' do %>
+              <i class="fa-solid fa-trash"></i>
+              <p class="h6 ">delete</p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <strong>Place:</strong>
-  <%= @event.place %>
-</p>
+  <div class="row text-center mt-4">
+    <div class="col-12">
+      <% if logged_in? && current_user.participating_events.include?(@event) %>
+        <%= link_to event_participation_path(@event), method: :delete do %>
+          <div class="btn btn-outline-info rounded-pill fz15">キャンセル</div>
+        <% end %>
+      <% else %>
+        <%= link_to event_participation_path(@event), method: :post do %>
+          <div class="btn btn-outline-info rounded-pill fz25">参加</div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <strong>ユーザー名</strong>
-  <%= @event.user.name %>
-</p>
-
-<p>
-  <strong>カテゴリー</strong>
-  <%= @event.category.name %>
-</p>
-
-<%= link_to 'Back', events_path %>
-
-<% if @event.created_by?(current_user) %>
-  <%= link_to 'Edit', edit_event_path(@event) %> 
-  <%= link_to 'Destroy', event_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' }, class: "btn btn-primary btn-block #{ @event.pickable_counts > 0 ? 'disabled' : '' }" } %>
-<% end %>
-<% if logged_in? && current_user.participating_events.include?(@event) %>
-  <%= link_to 'キャンセル', event_participation_path(@event), method: :delete %>
-<% else %>
-  <%= link_to '参加', event_participation_path(@event), method: :post %>
-<% end %>
-</br>
-<% @event.participations.each do |participation|%>
-  <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
-  <%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %>
-  <%= participation.user.name %>
-<% end %>
+  <div class="row mt-3"><%= link_to 'Back', events_path %></div>

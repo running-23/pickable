@@ -25,10 +25,8 @@ ja:
         number_of_members: 開催希望人数
         scheduled_date: イベント日時
         place: 開催場所
-      category:
-        name: カテゴリー
+        category_id: カテゴリー
 
-        
   enums:
     user:
       role:
@@ -36,9 +34,4 @@ ja:
         general: 一般
       accept_random:
         accepted: WELCOME
-        denied: SLEEPING 
-    event:
-      pickable_mode:
-        all_applicant: 希望制
-        applicant_and_random: 一部希望制
-        random: ランダム
+        denied: SLEEPING
