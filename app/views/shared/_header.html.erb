@@ -1,8 +1,8 @@
 <header>
   <nav class="navbar navbar-light bg-orange navbar-expand-md">
     <div class="container-fluid">
-      <%= link_to root_path, class: 'navbar-brand red' do %>
-        <h1>Pickable</h1>
+      <%= link_to root_path, class: 'navbar-brand red ms-4' do %>
+        <%= image_tag "logo.png", size: '130x65' %>
       <% end %>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
             <a class="nav-link dropdown-toggle red hover-target h5" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Event
             </a>
-            <ul class="dropdown-menu bg-light-orange-imp" aria-labelledby="navbarDropdownMenuLink">
+            <ul class="dropdown-menu bg-light-orange-imp shadow" aria-labelledby="navbarDropdownMenuLink">
               <li><%= link_to 'Events', events_path ,class: 'nav-link orange-imp hover-target' %></li>
               <li><%= link_to 'Create Event', new_event_path ,class: 'nav-link orange-imp hover-target' %></li>
             </ul>
@@ -24,7 +24,7 @@
           <li class="nav-item my-auto">
             <%= link_to 'My Page', user_path(current_user.id), class: 'nav-link red hover-target h5' %>
           </li>
-          
+
           <li class="nav-item my-auto">
             <%= link_to 'Logout', logout_path ,class: 'nav-link red hover-target h5', method: :delete %>
           </li>
