@@ -1,5 +1,5 @@
 <%= form_with(model: category) do |form| %>
-  <%= render 'shared/error_messages', object: f.object %>
+  <%= render 'shared/error_messages', object: form.object %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
