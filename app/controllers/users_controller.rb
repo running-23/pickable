@@ -6,9 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @events_from_today =
-      current_user.participating_events.includes(%i[user category]).from_today
+      current_user.participating_events.includes(%i[category participations]).from_today
     @events_till_yesterday =
-      current_user.participating_events.includes(%i[user category]).till_yesterday
+      current_user.participating_events.includes(%i[category participations]).till_yesterday
   end
 
   def update

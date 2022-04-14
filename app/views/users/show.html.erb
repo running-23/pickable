@@ -64,11 +64,11 @@
   <% end %>
 
   <!-- ひよコネリンク -->
-  <div class="row justify-content-center mt-5 h4">
+  <div class="row justify-content-center mt-4 h4">
     <div class="col-6 orange my-auto text-end">
       ひよコネのプロフィール　　　
     </div>
-    <div class="col-5 text-start ms-5 hover">
+    <div class="col-5 text-start ms-5 ps-5 hover">
       <% if @user.hiyoconne_url.present? %>
         <%= link_to @user.hiyoconne_url, target: "_blank", rel: "noopener noreferrer" do %>
           <%= image_tag 'hiyoconne_icon.png', class: 'rounded-circle hover-target', size: '50x60' %>
@@ -85,16 +85,20 @@
 <!-- ユーザーの参加イベント -->
 <div class='container mt-7'>
   <div class="row justify-content-center">
-    <h3 class="col-auto red">
+    <h3 class="col-auto red my-5">
       参加中・参加予定のイベント
     </div>
   </div>
+
+  <%= render 'shared/event', events: @events_from_today %>
 </div>
 
 <div class='container mt-7'>
   <div class="row justify-content-center">
-    <h3 class="col-auto red">
+    <h3 class="col-auto red my-5">
       参加したイベント
     </div>
   </div>
+
+  <%= render 'shared/event', events: @events_till_yesterday %>
 </div>

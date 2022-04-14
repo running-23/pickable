@@ -1,19 +1,25 @@
 <header>
-  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+  <nav class="navbar navbar-light bg-orange navbar-expand-md">
+    <div class="container-fluid">
+      <%= link_to root_path, class: 'navbar-brand red ms-3' do %>
+        <%= image_tag "logo.png", size: '130x65' %>
+      <% end %>
 
-    <%= link_to root_path, class: 'navbar-brand' do %>
-      <h1>Pickable</h1>
-    <% end %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto main-nav align-items-center">
-        <li class="nav-item">
-          <%= link_to 'Events', events_path ,class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-         <%= link_to 'Login', auth_at_provider_path(provider: :github), class: 'nav-link' %>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto mb-md-0">
+          <li class="nav-item my-auto">
+            <%= link_to 'Events', events_path ,class: 'nav-link red hover-target h5' %>
+          </li>
+          
+          <li class="nav-item my-auto">
+            <%= link_to 'Login', auth_at_provider_path(provider: :github), class: 'nav-link red hover-target h5' %>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
