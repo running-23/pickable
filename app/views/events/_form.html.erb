@@ -27,9 +27,9 @@
           <%= form.label :category_id %>
         </div>
         <div class="col-form-control col-6 row h4">
-          <%= form.collection_check_boxes(:category_id, Category.all, :id, :name) do |b| %>
-            <%= b.check_box class:"my-auto col-2" do %>
-              <%= b.check_box + b.text %>
+          <%= form.collection_radio_buttons(:category_id, Category.all, :id, :name) do |b| %>
+            <%= b.radio_button class:"my-auto col-2" do %>
+              <%= b.radio_button + b.text %>
             <% end %>
             <%= b.label class:"badge bg-category my-1 col-2" do %>
               <%= b.label {b.text} %>
