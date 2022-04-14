@@ -5,6 +5,7 @@
 #  id                :bigint           not null, primary key
 #  description       :string           not null
 #  number_of_members :integer          not null
+#  pickable_counts   :integer          default(0)
 #  place             :string           not null
 #  scheduled_date    :datetime         not null
 #  title             :string           not null
