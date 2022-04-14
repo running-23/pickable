@@ -85,16 +85,20 @@
 <!-- ユーザーの参加イベント -->
 <div class='container mt-7'>
   <div class="row justify-content-center">
-    <h3 class="col-auto red">
+    <h3 class="col-auto red my-5">
       参加中・参加予定のイベント
     </div>
   </div>
+
+  <%= render 'shared/event', events: @events_from_today %>
 </div>
 
 <div class='container mt-7'>
   <div class="row justify-content-center">
-    <h3 class="col-auto red">
+    <h3 class="col-auto red my-5">
       参加したイベント
     </div>
   </div>
+
+  <%= render 'shared/event', events: @events_till_yesterday %>
 </div>
