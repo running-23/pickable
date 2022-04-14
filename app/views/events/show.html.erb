@@ -20,7 +20,7 @@
       <%= @event.user.name %>
     </div>
     <div class="h4 text-center mx-auto mt-2 col-8">
-      <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"')%>
+      <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"' 'rel="noopener noreferrer"')%>
     </div>
   </div>
 
