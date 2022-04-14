@@ -1,14 +1,12 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= stylesheet_link_tag "mailer" %>
   </head>
   <body>
     <h1>Welcome to Pickable！</h1>
-    <h2><%= @user.github_name %>様、Pickableへの登録ありがとうございます！</h2>
-    <p>
-      Pickableへのユーザー登録が成功しました<br>
-    </p>
-    <p>
+    <h2 class="pb40"><%= @user.github_name %>様、Pickableへの登録ありがとうございます！</h2>
+    <p class="pb40">
       このサービスはイベント開催、参加のハードルを少しでも下げて<br>
       コミュニティに入る「きっかけ」を作ることができれば、との思いから開発がスタートしました。<br>
       Pickableを通して公式のイベントからだけではなく<br>
