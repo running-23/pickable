@@ -37,13 +37,23 @@
   color: #1FFFFF;
 }
 
+// 強制
+.orange-imp {
+  color: #FF9D76 !important;
+}
+
 body {
   background-color: #FFFDE1 !important;
 }
 
-// 背景をorangeに
+// 背景
 .bg-orange {
   background-color: #FF9D76;
+}
+
+// 強制
+.bg-light-orange-imp {
+  background-color: #ffede5 !important;
 }
 
 // 共通
@@ -112,4 +122,11 @@ body {
   &:hover {
     color: inherit;
   }
+}
+
+// エラーメッセージの表示崩れを防ぐ
+.error_msg_with_errors {
+  width: 40%;
+  margin: 0 auto;
+  text-align: left;
 }

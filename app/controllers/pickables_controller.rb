@@ -1,6 +1,7 @@
 class PickablesController < ApplicationController
   def create
     event = Event.find(params[:event_id])
+    event.update(pickable_counts: 1)
     # Welcomeのユーザーを取ってくる
     accepted_users = User.accepted
     target_users = []

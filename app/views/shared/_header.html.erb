@@ -1,25 +1,34 @@
 <header>
-  <nav class="navbar navbar-expand-lg navigation bg-orange">
+  <nav class="navbar navbar-light bg-orange navbar-expand-md">
+    <div class="container-fluid">
+      <%= link_to root_path, class: 'navbar-brand red ms-4' do %>
+        <%= image_tag "logo.png", size: '130x65' %>
+      <% end %>
 
-    <%= link_to root_path, class: 'navbar-brand red' do %>
-      <h1>Pickable</h1>
-    <% end %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto main-nav align-items-center">
-        <li class="nav-item">
-          <%= link_to 'Events', events_path ,class: 'nav-link red' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Create Event', new_event_path ,class: 'nav-link red' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'My Page', user_path(current_user.id), class: 'nav-link red' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Logout', logout_path ,class: 'nav-link red', method: :delete %>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto mb-md-0">
+          <li class="nav-item dropdown my-auto">
+            <a class="nav-link dropdown-toggle red hover-target h5" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Event
+            </a>
+            <ul class="dropdown-menu bg-light-orange-imp shadow" aria-labelledby="navbarDropdownMenuLink">
+              <li><%= link_to 'Events', events_path ,class: 'nav-link orange-imp hover-target' %></li>
+              <li><%= link_to 'Create Event', new_event_path ,class: 'nav-link orange-imp hover-target' %></li>
+            </ul>
+          </li>
+
+          <li class="nav-item my-auto">
+            <%= link_to 'My Page', user_path(current_user.id), class: 'nav-link red hover-target h5' %>
+          </li>
+
+          <li class="nav-item my-auto">
+            <%= link_to 'Logout', logout_path ,class: 'nav-link red hover-target h5', method: :delete %>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-</header>

@@ -5,6 +5,7 @@
 #  id                :bigint           not null, primary key
 #  description       :string           not null
 #  number_of_members :integer          not null
+#  pickable_counts   :integer          default(0), not null
 #  place             :string           not null
 #  scheduled_date    :datetime         not null
 #  title             :string           not null
@@ -34,6 +35,7 @@ class Event < ApplicationRecord
   validates :number_of_members, presence: true, numericality: { greater_than: 0 }
   validates :scheduled_date, presence: true
   validates :place, presence: true
+  validates :pickable_counts, presence: true, inclusion: { in: 0..1 }
   validate :past_scheduled_date
 
   def past_scheduled_date
