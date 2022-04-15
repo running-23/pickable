@@ -20,7 +20,7 @@
       <%= @event.user.name %>
     </div>
     <div class="h4 text-center mx-auto mt-2 col-8">
-      <%= @event.description %>
+      <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"' 'rel="noopener noreferrer"')%>
     </div>
   </div>
 
@@ -42,9 +42,7 @@
     <div class="row text-center mt-4">
     <div class="col-12">
       <% if @event.created_by?(current_user) %>
-        <%= link_to event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' } } do %>
-          <div class="btn btn-outline-info-pick rounded-pill fz25">Pickable</div>
-        <% end %>
+        <%= link_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: 'Pickableを発動しますか？' }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts > 0 }" } %>
 
         <div class="row justify-content-center mt-3">
           <div class="col-1">
@@ -79,5 +77,3 @@
   </div>
 
   <div class="row mt-3"><%= link_to 'Back', events_path %></div>
-
-</div>
