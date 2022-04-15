@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   def index
     @events =
-      Event.includes(%i[user category]).from_today.page(params[:page]).per(10)
+      Event.preload(:category).eager_load(:participations).from_today.page(params[:page]).per(10)
   end
 
   def show
