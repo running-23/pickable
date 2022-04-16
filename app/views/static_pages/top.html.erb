@@ -54,7 +54,7 @@
       Pickableは参加者の自主的な参加に加えて<br>
       希望しているジャンルのイベントに<br>
       ※自動的にランダム参加ができる<br>
-      イベント企画サービスです。<br>
+      <span class="fs-4">イベント企画サービス</span>です。<br>
       <span class="small text-muted">※設定による</span>
     </h6>
   </div>
@@ -103,7 +103,7 @@
             </div>
           </div>
           <div class="row justify-content-center">
-            <h5 class="col-auto text-center">
+            <h5 class="col-auto text-center text-decoration-underline">
               １. GitHub認証で登録！
             </h5>
           </div>
@@ -120,7 +120,7 @@
             </h6>
           </div>
           <div class="row justify-content-center mt-5">
-            <h5 class="col-auto text-center">
+            <h5 class="col-auto text-center text-decoration-underline">
               2. アカウントの初期設定をしよう！
             </h5>
           </div>
@@ -139,7 +139,7 @@
                   </tr>
                   <tr>
                     <th scope="row">ランダム設定</th>
-                    <td>イベントにランダムで抽出されることを許可するか</td>
+                    <td>イベントにランダムで選出されることを許可するか</td>
                   </tr>
                   <tr>
                     <th scope="row">希望ジャンル</th>
@@ -195,16 +195,16 @@
           </div>
           <div class="row justify-content-center mt-5">
             <h5 class="col-auto text-center">
-              2. ランダム抽出で
+              2. ランダム選出で
             </h5>
           </div>
           <div class="row justify-content-center mt-3 mb-5">
             <h6 class="col-auto text-center">
-              アカウント設定が<span class="badge rounded-pill accepted">WELCOWE</span>な場合は<br>
+              アカウント設定が<span class="badge rounded-pill accepted">WELCOME</span>な場合は<br>
               希望しているジャンルのイベントにて<br>
-              Pickableが発動されるとランダムで抽出されます！<br>
+              Pickableが発動されるとランダムで選出されます！<br>
               <br>
-              ランダム抽出されるとメールが届きます。<br>
+              ランダム選出されるとメールが届きます。<br>
               偶発性を楽しもう！
             </h6>
           </div>
@@ -249,37 +249,95 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-auto">
-              <%= image_tag "calendar.png", size: '200x200' %>
+              <%= image_tag "man_with_bulb.png", size: '200x200' %>
             </div>
           </div>
           <div class="row justify-content-center">
-            <h5 class="col-auto text-center">
-              １. Create Eventからイベントを作成！
+            <h5 class="col-auto text-center text-decoration-underline">
+              １. Create Eventからイベント作成画面へ
             </h5>
           </div>
           <div class="row justify-content-center my-3">
             <div class="col-auto">
-              <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
-                <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
-              <% end %>
+              <div class="btn btn-outline-info rounded-pill mb-3">Create Event</div>
             </div>
           </div>
-          <div class="row justify-content-center mt-1">
+          <div class="row justify-content-center">
             <h6 class="col-auto text-center">
-              このボタンから登録できます。<br>
-              ※GitHubに登録されているメールアドレス宛に<br>
-              登録完了のメールをお送りします！
+              イベント一覧ページにあるこのボタン、もしくは<br>
+              ヘッダーメニューの"Create Event"から<br>
+              イベント作成ページへ！
             </h6>
           </div>
           <div class="row justify-content-center mt-5">
-            <h5 class="col-auto text-center">
-              2. アカウントの初期設定をしよう！
+            <h5 class="col-auto text-center text-decoration-underline">
+              2. 必要事項を入力してイベントを作成！
             </h5>
           </div>
           <div class="row justify-content-center mt-3">
             <div class="col-auto">
-              <%= image_tag "desc_settings.png", class: 'shadow', size: '540x300' %>
+              <%= image_tag "desc_new_event.png", class: 'shadow', size: '540x345' %>
             </div>
+          </div>
+          <div class="row justify-content-center my-5">
+            <h6 class="col-auto text-start">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">タイトル</th>
+                    <td>一覧画面で表示されるイベントタイトルです。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">詳細</th>
+                    <td>改行・URL対応！タイムテーブルや所要時間など詳細はこちらに。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ジャンル</th>
+                    <td>ランダム選出時に、ここで設定したカテゴリーを希望しているユーザーが対象になります。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">開催希望人数</th>
+                    <td>開催人数の上限を設定。後から変更できます！</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">イベント開始日時</th>
+                    <td>開始日時を設定。余裕を持ったスケジューリングがオススメ！</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">開催場所</th>
+                    <td>ディスコードの〇〇部屋など。サービス専用のサーバーを開設予定！</td>
+                  </tr>
+                </tbody>
+              </table>
+            </h6>
+          </div>
+          <div class="row justify-content-center mt-5">
+            <h5 class="col-auto text-center text-decoration-underline">
+              3. 発動は一度きり！〜ランダムで参加者を選出〜
+            </h5>
+          </div>
+          <div class="row justify-content-center my-3">
+            <div class="col-auto">
+              <div class="btn btn-outline-info-pick rounded-pill fz25">Pickable</div>
+            </div>
+          </div>
+          <div class="row justify-content-center my-4">
+            <h6 class="col-auto text-center">
+              主催者のみに許された"Pickable"ボタン。<br>
+              押すことで、そのイベントのジャンルを希望している<span class="badge rounded-pill accepted">WELCOME</span>ユーザーから<br>
+              開催希望人数までの不足人数がランダムで選出されます！<br>
+              <br>
+              「話したことない人だったらどうしよう？」<br>
+              「勝手に参加させられて嫌がられたらどうしよう？」<br>
+              大丈夫！<span class="badge rounded-pill accepted">WELCOME</span>ユーザーなら快く参加してくれるはず！<br>
+              その一歩、その偶然の出会いが人生を変えることもある。<br>
+            </h6>
+          </div>
+          <div class="row justify-content-center my-5 py-5">
+            <h2 class="col-auto orange text-center">
+              Let's Pickable!<br>
+              Enjoy Serendipity!
+            </h2>
           </div>
         </div>
       </div>

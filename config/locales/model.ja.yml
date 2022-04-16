@@ -23,9 +23,9 @@ ja:
         title: タイトル
         description: 詳細
         number_of_members: 開催希望人数
-        scheduled_date: イベント日時
+        scheduled_date: イベント開始日時
         place: 開催場所
-        category_id: カテゴリー
+        category_id: ジャンル
 
   enums:
     user:
