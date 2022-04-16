@@ -3,12 +3,16 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    authorize @categories
   end
 
   def show; end
 
   def new
     @category = Category.new
+    authorize @category
+  rescue Pundit::NotAuthorizedError
+    redirect_to categories_url, danger: '管理者のみ'
   end
 
   def edit; end
@@ -21,6 +25,8 @@ class CategoriesController < ApplicationController
     else
       render :new
     end
+  rescue Pundit::NotAuthorizedError
+    redirect_to categories_url, danger: '管理者のみ'
   end
 
   def update
@@ -40,6 +46,9 @@ class CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
+    authorize @category
+  rescue Pundit::NotAuthorizedError
+    redirect_to categories_url, danger: '管理者のみ'
   end
 
   def category_params
