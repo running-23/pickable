@@ -7,3 +7,12 @@
 .pb40 {
   padding-bottom: 40px;
 }
+body {
+  color: #000;
+}
+
+@media screen and (min-width: 480px) {
+  .br {
+    display: none;
+  } 
+}

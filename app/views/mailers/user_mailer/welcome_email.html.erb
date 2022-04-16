@@ -5,15 +5,17 @@
   </head>
   <body>
     <h1>Welcome to Pickable！</h1>
-    <h2 class="pb40"><%= @user.github_name %>様、Pickableへの登録ありがとうございます！</h2>
-    <p class="pb40">
-      このサービスはイベント開催、参加のハードルを少しでも下げて<br>
-      コミュニティに入る「きっかけ」を作ることができれば、との思いから開発がスタートしました。<br>
-      Pickableを通して公式のイベントからだけではなく<br>
-      RUNTEQ生間の「つながり」を増やしていただければ嬉しいです！
-    </p>
-    <p>本サイトにユーザー登録いただきありがとうございます。</p>
-    <p><%= link_to 'Pickable', @url %></p>
-    <p>Pickable開発者一同</p>
+    <h2 class="pb40"><%= @user.github_name %>様、Pickableへの<br class="br">登録ありがとうございます！</h2>
+    <div class="pb40">
+      <p>このサービスはイベント開催、参加の<br class="br">ハードルを少しでも下げて</p>
+      <p>コミュニティに入る「きっかけ」を作ることが<br class="br">できれば、との思いから開発がスタートしました</p>
+      <p>Pickableを通して公式イベントからだけではなく</p>
+      <p>RUNTEQ生間の「つながり」を<br class="br">増やしていただければ嬉しいです！</p>
+    </div>
+    <div>
+      <p>本サイトにユーザー登録いただき<br class="br">ありがとうございます。</p>
+      <p><%= link_to 'Pickable', @url %></p>
+      <p>Pickable開発者一同</p>
+    </div>
   </body>
 </html>
