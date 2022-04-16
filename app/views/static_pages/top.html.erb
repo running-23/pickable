@@ -1,3 +1,45 @@
-<%= link_to auth_at_provider_path(provider: :github), class: "btn btn-light" do %>
-  <span class="has-text-weight-medium">Sign in with Github</span>
-<% end %>
+<div class="container mt-3 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <%= image_tag "logo.png", size: '450x225' %>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <h4 class="col-auto text-center">
+      偶発性を楽しむ<br>
+      RUNTEQ性専用イベントサービス
+    </h4>
+  </div>
+  <div class="row justify-content-center my-3">
+    <div class="col-auto">
+      <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
+        <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+      <% end %>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-auto text-center">
+      先にイベントを見てみる？
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <div class="col-auto">
+      <%= link_to events_path, class: "btn btn-outline-warning rounded-pill" do %>
+        <h6 class="has-text-weight-medium my-auto">Look in Events</h6>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="">
+    </div>
+  </div>
+</div>

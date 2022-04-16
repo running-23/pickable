@@ -83,6 +83,15 @@ body {
   border: 5px solid !important;
 }
 
+.btn-outline-warning {
+  border-color: #ffc107 !important;
+  border: 5px solid !important;
+  &:hover {
+    border-color: #ffc107 !important;
+    color: #fff !important;
+  }
+}
+
 // ランダム設定用
 .accepted {
   background-color: #FF9078;
