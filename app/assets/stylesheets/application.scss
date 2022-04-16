@@ -123,3 +123,10 @@ body {
     color: inherit;
   }
 }
+
+// エラーメッセージの表示崩れを防ぐ
+.error_msg_with_errors {
+  width: 40%;
+  margin: 0 auto;
+  text-align: left;
+}

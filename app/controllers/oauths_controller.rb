@@ -13,6 +13,7 @@ class OauthsController < ApplicationController
     else
       begin
         @user = create_from(provider)
+        @user.update(name: @user.github_name)
         UserMailer.with(user: @user).welcome_email.deliver_now
         reset_session
         auto_login(@user)
