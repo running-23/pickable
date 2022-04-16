@@ -91,22 +91,25 @@
       <!-- 初期設定の説明 -->
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div class="row justify-content-center my-5">
+          <div class="row justify-content-center mt-5">
             <h4 class="col-auto orange text-center">
               Join Pickable！<br>
               <span>〜初期設定〜</span>
             </h4>
           </div>
-          <div class="row justify-content-center mt-5">
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <%= image_tag "use_phone.png", size: '200x200' %>
+            </div>
+          </div>
+          <div class="row justify-content-center">
             <h5 class="col-auto text-center">
               １. GitHub認証で登録！
             </h5>
           </div>
           <div class="row justify-content-center my-3">
             <div class="col-auto">
-              <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
-                <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
-              <% end %>
+              <h5 class="btn btn-outline-info rounded-pill has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
             </div>
           </div>
           <div class="row justify-content-center mt-1">
@@ -143,8 +146,8 @@
                     <td>ランダム設定を許可した場合にどのカテゴリーのイベントに参加するか</td>
                   </tr>
                   <tr>
-                    <th scope="row">ひよコネ</th>
-                    <td>ひよこコネクト登録してる場合はマイページのURLを入れてね！</td>
+                    <th scope="row">ひよコネリンク</th>
+                    <td>ひよこコネクトに登録してる場合はマイページのURLを入れてね！</td>
                   </tr>
                 </tbody>
               </table>
@@ -154,18 +157,128 @@
 
         <!-- 参加者サイドの説明 -->
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="row justify-content-center mt-5">
+            <h4 class="col-auto orange text-center">
+              Join Events！<br>
+              <span>〜イベントに参加しよう〜</span>
+            </h4>
+          </div>
           <div class="row justify-content-center">
             <div class="col-auto">
-              2つ目
+              <%= image_tag "calendar.png", size: '200x200' %>
             </div>
+          </div>
+          <div class="row justify-content-center">
+            <h5 class="col-auto text-center text-decoration-underline">
+              参加方法
+            </h5>
+          </div>
+          <div class="row justify-content-center mt-1">
+            <h6 class="col-auto text-center">
+              Pickableにはイベント参加方法が２種類あります。
+            </h6>
+          </div>
+          <div class="row justify-content-center mt-5">
+            <h5 class="col-auto text-center">
+              1. 参加ボタンで
+            </h5>
+          </div>
+          <div class="row justify-content-center mt-2">
+            <h6 class="col-auto text-center">
+              興味のあるイベントを見つけたら、詳細ページの参加ボタンから参加！
+            </h6>
+          </div>
+          <div class="row justify-content-center my-3">
+            <div class="col-auto">
+              <%= image_tag "desc_join.png", class: 'shadow', size: '540x330' %>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-5">
+            <h5 class="col-auto text-center">
+              2. ランダム抽出で
+            </h5>
+          </div>
+          <div class="row justify-content-center mt-3 mb-5">
+            <h6 class="col-auto text-center">
+              アカウント設定が<span class="badge rounded-pill accepted">WELCOWE</span>な場合は<br>
+              希望しているジャンルのイベントにて<br>
+              Pickableが発動されるとランダムで抽出されます！<br>
+              <br>
+              ランダム抽出されるとメールが届きます。<br>
+              偶発性を楽しもう！
+            </h6>
+          </div>
+          <div class="row justify-content-center mt-5 pt-5">
+            <h5 class="col-auto text-center text-decoration-underline">
+              参加のキャンセル方法
+            </h5>
+          </div>
+          <div class="row justify-content-center my-3">
+            <div class="col-auto">
+              <div class="btn btn-outline-info rounded-pill fz15">キャンセル</div>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-4 mb-5">
+            <h6 class="col-auto text-center">
+              参加方法に関わらず、イベントの詳細ページにある"キャンセルボタン"から<br>
+              いつでもキャンセルできます！
+            </h6>
+          </div>
+          <div class="row justify-content-center mt-5 pt-5">
+            <h5 class="col-auto text-center text-decoration-underline">
+              参加イベント自体のキャンセル
+            </h5>
+          </div>
+          <div class="row justify-content-center mt-4 mb-5">
+            <h6 class="col-auto text-center">
+              参加イベントが主催者によって削除された場合は<br>
+              メールで通知されます。<br>
+              <br>
+              諦めきれない場合は主催してみよう！
+            </h6>
           </div>
         </div>
 
         <!-- 主催サイドの説明 -->
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="row justify-content-center mt-5">
+            <h4 class="col-auto orange text-center">
+              Host Events！<br>
+              <span>〜イベントを主催しよう〜</span>
+            </h4>
+          </div>
           <div class="row justify-content-center">
             <div class="col-auto">
-              3つめ
+              <%= image_tag "calendar.png", size: '200x200' %>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <h5 class="col-auto text-center">
+              １. Create Eventからイベントを作成！
+            </h5>
+          </div>
+          <div class="row justify-content-center my-3">
+            <div class="col-auto">
+              <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
+                <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+              <% end %>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-1">
+            <h6 class="col-auto text-center">
+              このボタンから登録できます。<br>
+              ※GitHubに登録されているメールアドレス宛に<br>
+              登録完了のメールをお送りします！
+            </h6>
+          </div>
+          <div class="row justify-content-center mt-5">
+            <h5 class="col-auto text-center">
+              2. アカウントの初期設定をしよう！
+            </h5>
+          </div>
+          <div class="row justify-content-center mt-3">
+            <div class="col-auto">
+              <%= image_tag "desc_settings.png", class: 'shadow', size: '540x300' %>
             </div>
           </div>
         </div>
