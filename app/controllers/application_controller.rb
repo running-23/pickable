@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def category_not_authorized
-    redirect_to categories_url, danger: '権限がありません'
+    redirect_to root_path, danger: '権限がありません'
   end
 end
