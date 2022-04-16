@@ -42,6 +42,25 @@
       <% if @event.created_by?(current_user) %>
         <%= link_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: "Pickableを発動しますか？\n※1回しか発動できません。" }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts > 0 }" } %>
 
+        <div class="row justify-content-center mt-2">
+          <a href="javascript:void(0)" id="openModal" class="col-2">Pickableとは？</a>
+        </div>
+        <!-- モーダルエリアここから -->
+        <section id="modalArea" class="modalArea">
+          <div id="modalBg" class="modalBg"></div>
+          <div class="modalWrapper">
+            <div class="modalContents">
+              <div class="h2 red">Pickableとは？</div>
+              <p class="h5 mt-3">イベント参加者を登録ユーザーからランダムでピックアップする機能のこと！</p>
+              <p>※ 1回のみ使用可能</p>
+            </div>
+            <div id="closeModal" class="closeModal">
+              ×
+            </div>
+          </div>
+        </section>
+        <!-- モーダルエリアここまで -->
+
         <div class="row justify-content-center mt-3">
           <div class="col-1">
             <%= link_to edit_event_path(@event), class: "col-auto h2 hover-target text-center simple-a-tag" do %>

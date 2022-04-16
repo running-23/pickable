@@ -9,3 +9,15 @@ document.addEventListener('turbolinks:load', window.buttonClick = function butto
     // txtArea.value = ""; 切り替えでカテゴリー選択のチェックを外す記述。とりあえずOFF
   }
 });
+
+// events#showモーダル
+document.addEventListener('turbolinks:load', window.buttonClick = function buttonClick() {
+  $(function () {
+    $('#openModal').click(function(){
+        $('#modalArea').fadeIn();
+    });
+    $('#closeModal , #modalBg').click(function(){
+      $('#modalArea').fadeOut();
+    });
+  });
+});
