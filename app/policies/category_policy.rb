@@ -1,14 +1,13 @@
 class CategoryPolicy < ApplicationPolicy
-   def index?
-    true
+  def index?
+    user.admin?
   end
 
   def show?
-    true
+    user.admin?
   end
 
   def create?
-    false
     user.admin?
   end
 
@@ -17,7 +16,6 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def update?
-    false
     user.admin?
   end
 
@@ -26,7 +24,6 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def destroy?
-    false
     user.admin?
   end
 end
