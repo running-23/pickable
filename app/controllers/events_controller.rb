@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
     if @event.save
       current_user.participate(@event)
-      redirect_to event_path(@event), success: 'Event was successfully created.'
+      redirect_to event_path(@event), success: 'イベントが作成されました。'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to event_path(@event), success: 'Event was successfully updated.'
+      redirect_to event_path(@event), success: 'イベントが更新されました。'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class EventsController < ApplicationController
   def destroy
     EventCancelMailer.with(event: @event).event_cancel.deliver_now
     @event.destroy
-    redirect_to events_path, success: 'Event was successfully destroyed.'
+    redirect_to events_path, success: 'イベントが削除されました。'
   end
 
   private
