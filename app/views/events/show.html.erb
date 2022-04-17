@@ -12,25 +12,25 @@
       ＠  <%= @event.place %>
     </div>
     <div>
-    <div class="badge bg-category mx-auto col-1 fz12 mt-1">
+    <div class="badge bg-category col-1 fz12 mt-1">
       <%= @event.category.name %>
     </div>
     <div class="mt-5">
       <strong>主催：</strong>
       <%= @event.user.name %>
     </div>
-    <div class="h4 text-center mx-auto mt-2 col-8">
+    <div class="h4 text-center mt-2 col-8 mx-auto">
       <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"' 'rel="noopener noreferrer"')%>
     </div>
   </div>
 
-  <div class="row text-center mt-5 mx-part justify-content-center">
+  <div class="row text-center mt-5 justify-content-center">
     <div class="mb-2">
       メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
     </div>
     <div class="justify-content-start row w-60 ms-4">
       <% @event.participations.each do |participation|%>
-        <div class="col-2 my-2 ">
+        <div class="col-2 my-2">
           <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
           <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '60x60' %></div>
           <div class="text-wrap text-break my-2 fz075"><%= participation.user.name %></div>

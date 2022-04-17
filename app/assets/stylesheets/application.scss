@@ -17,17 +17,13 @@
 /* font-awesomeの読み込み */
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 
- /* フォント */
-// @import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=RocknRoll+One&display=swap');
-// * {
-//   font-family: 'Coda Caption', 'RocknRoll One', sans-serif;
-// }
-
+// フォント
 @import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Yusei+Magic&display=swap');
 * {
   font-family: 'Coda Caption', 'Yusei Magic', sans-serif;
   }
 
+// 英語にyuseiを適用するクラス
 .font-yusei {
   font-family: 'Yusei Magic', sans-serif;
 }

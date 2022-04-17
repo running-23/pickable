@@ -53,7 +53,7 @@
     <h6 class="col-auto text-center">
       Pickableは参加者の自主的な参加に加えて<br>
       希望しているジャンルのイベントに<br>
-      ※自動的にランダム参加ができる<br>
+      <span class="small text-muted">※</span>自動的にランダムで選出される<br>
       <span class="fs-4">イベント企画サービス</span>です。<br>
       <span class="small text-muted">※設定による</span>
     </h6>
@@ -109,7 +109,9 @@
           </div>
           <div class="row justify-content-center my-3">
             <div class="col-auto">
-              <h5 class="btn btn-outline-info rounded-pill has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+              <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
+                <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+              <% end %>
             </div>
           </div>
           <div class="row justify-content-center mt-1">
@@ -139,15 +141,15 @@
                   </tr>
                   <tr>
                     <th scope="row">ランダム設定</th>
-                    <td>イベントにランダムで選出されることを許可するか</td>
+                    <td>ランダム選出の許可設定</td>
                   </tr>
                   <tr>
                     <th scope="row">希望ジャンル</th>
-                    <td>ランダム設定を許可した場合にどのカテゴリーのイベントに参加するか</td>
+                    <td>ランダム選出時に希望ジャンルのイベントにのみ選出されます</td>
                   </tr>
                   <tr>
                     <th scope="row">ひよコネリンク</th>
-                    <td>ひよこコネクトに登録してる場合はマイページのURLを入れてね！</td>
+                    <td>ひよこコネクトに登録してる場合はマイページのURLを入れてください</td>
                   </tr>
                 </tbody>
               </table>
