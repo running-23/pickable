@@ -22,11 +22,15 @@
       <%= @event.category.name %>
     </div>
   </div>
-  <div class="row text-center mt-5">
-    <div class="h4 text-center mx-auto mt-2 col-8">
+
+
+  <div class="h5 text-start lh-base mx-auto col-7 mt-5 desc">
+    <div class="p-3">
+      <div class="text-center skyblue mb-3">イベント詳細</div>
       <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"' 'rel="noopener noreferrer"')%>
     </div>
   </div>
+
 
   <div class="row text-center mt-5">
     <div class="mb-2">
