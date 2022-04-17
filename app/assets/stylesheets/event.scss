@@ -15,7 +15,6 @@
   color: black;
 }
 
-
 .event-link {
   text-decoration: none;
 }
@@ -27,6 +26,11 @@
   border-color: #FF4273 !important;
   border: 5px solid !important;
   text-decoration: none;
+}
+
+.desc {
+  background-color: #fff;
+  border: #FF9D76 2px solid;
 }
 
 /* モーダルCSS */

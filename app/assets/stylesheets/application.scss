@@ -57,8 +57,12 @@ body {
 }
 
 // 共通
+// レイアウト
 .flex {
   display: flex;
+}
+.w-60 {
+  width: 60% !important;
 }
 
 // フォントサイズ
@@ -71,7 +75,6 @@ body {
 .fz12 {
   font-size: 1.2rem !important;
 }
-
 .fz075 {
   font-size: 0.75rem;
 }

@@ -8,33 +8,43 @@
     <div class="display-6">
       <%= l @event.scheduled_date, format: :short %>
     </div>
-    <div class="h5 mt-1">
+    <div class="h5 mt-2">
       ＠  <%= @event.place %>
     </div>
-    <div>
+    <div class="h5 mt-1">
+      <strong><i class="fa-solid fa-user"></i></strong>
+      <%= @event.user.name %>
+    </div>
+  </div>
+
+  <div class="row text-center mt-2">
     <div class="badge bg-category mx-auto col-1 fz12 mt-1">
       <%= @event.category.name %>
     </div>
-    <div class="mt-5">
-      <strong>主催：</strong>
-      <%= @event.user.name %>
-    </div>
-    <div class="h4 text-center mx-auto mt-2 col-8">
+  </div>
+
+
+  <div class="h5 text-start lh-base mx-auto col-7 mt-5 desc">
+    <div class="p-3">
+      <div class="text-center skyblue mb-3">イベント詳細</div>
       <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"' 'rel="noopener noreferrer"')%>
     </div>
   </div>
 
-  <div class="row text-center mt-5">
+
+  <div class="row text-center mt-5 justify-content-center">
     <div class="mb-2">
       メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
     </div>
-    <% @event.participations.each do |participation|%>
-      <div class="col-1 mx-auto">
-        <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
-        <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
-        <div class="text-wrap text-break"><%= participation.user.name %></div>
-      </div>
-    <% end %>
+    <div class="justify-content-start row w-60 ms-4">
+      <% @participated_users.each do |participated_user|%>
+        <div class="col-2 my-2">
+          <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
+          <%# <%= image_tag participated_user.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %>
+          <div class="text-wrap text-break my-2 fz075"><%= participated_user.name %></div>
+        </div>
+      <% end %>
+    </div>
   </div>
 
     <div class="row text-center mt-4">
@@ -93,4 +103,4 @@
     </div>
   </div>
 
-  <div class="row mt-3"><%= link_to 'Back', events_path %></div>
+  <div class="row col-1 text-center mx-auto m-3"><%= link_to 'Back', events_path %></div>
