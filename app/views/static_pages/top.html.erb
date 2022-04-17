@@ -43,7 +43,7 @@
 </div>
 
 <!-- サービス説明 -->
-<div class="container mt-10 pt-5">
+<div class="container mt-10 pt-4">
   <div class="row justify-content-center mb-3">
     <h3 class="col-auto orange text-center">
       What's Pickable<br>
@@ -117,7 +117,7 @@
           <div class="row justify-content-center my-3">
             <div class="col-auto">
               <% unless logged_in? %>
-                <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
+                <%= link_to auth_at_provider_path(provider: :github), data: { confirm: "認証に進みますか？\n読んでる途中なら先に読むのがオススメです！" }, class: "btn btn-outline-info rounded-pill" do %>
                   <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
                 <% end %>
               <% else %>
@@ -330,7 +330,7 @@
                   </tr>
                   <tr>
                     <th scope="row">ジャンル</th>
-                    <td>ランダム選出時に、ここで設定したカテゴリーを希望しているユーザーが対象になります。</td>
+                    <td>ランダム選出時に、ここで設定したジャンルを希望しているユーザーが対象になります。</td>
                   </tr>
                   <tr>
                     <th scope="row">開催希望人数</th>
@@ -353,15 +353,17 @@
               3. 発動は一度きり！〜ランダムで参加者を選出〜
             </h5>
           </div>
-          <div class="row justify-content-center my-3">
+          <div class="row justify-content-center my-5">
             <div class="col-auto">
-              <div class="btn btn-outline-info-pick rounded-pill fz25">Pickable</div>
+              <div class="btn btn-outline-info-pick rounded-pill fz25">
+                <i class="fa-solid fa-handshake-simple"></i> Pickable <i class="fa-solid fa-handshake-simple"></i>
+              </div>
             </div>
           </div>
           <div class="row justify-content-center my-4">
             <h6 class="col-auto text-center">
               主催者のみに許された"Pickable"ボタン。<br>
-              押すことで、そのイベントのジャンルを希望している<span class="badge rounded-pill accepted">WELCOME</span>ユーザーから<br>
+              発動すると、そのイベントに設定したジャンルを希望している<span class="badge rounded-pill accepted">WELCOME</span>ユーザーから<br>
               開催希望人数までの不足人数がランダムで選出されます！<br>
               <br>
               「話したことない人だったらどうしよう？」<br>
@@ -383,11 +385,16 @@
 </div>
 
 <div class="container mt-10 pt-5">
-  <div class="row justify-content-center mb-3">
+  <div class="row justify-content-center">
     <h3 class="col-auto orange text-center">
       From Devlopers<br>
       <span class='font-yusei'>〜開発チームより〜</span>
     </h3>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <%= image_tag "explanation.png", size: '200x200' %>
+    </div>
   </div>
   <div class="row justify-content-center">
     <h6 class="col-auto text-center">
@@ -401,7 +408,7 @@
     </h6>
   </div>
   <div class="row justify-content-center my-5">
-    <h2 class="col-auto red text-center">
+    <h2 class="col-auto orange text-center">
       Let's Pickable!<br>
       Enjoy Serendipity!
     </h2>

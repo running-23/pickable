@@ -26,7 +26,12 @@
   color: #FF4273 !important;
   border-color: #FF4273 !important;
   border: 5px solid !important;
-  text-decoration: none;
+  // text-decoration: none;
+  &:hover {
+    color: #FFFDE1 !important;
+    border-color: #FF4273 !important;
+    background-color: #FF4273;
+  }
 }
 
 .w-60 {

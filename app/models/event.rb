@@ -37,6 +37,7 @@ class Event < ApplicationRecord
   validates :place, presence: true
   validates :pickable_counts, presence: true, inclusion: { in: 0..1 }
   validate :past_scheduled_date
+  validate :over_participations
 
   def past_scheduled_date
     if scheduled_date != nil && Time.current >= scheduled_date
@@ -49,5 +50,11 @@ class Event < ApplicationRecord
     return false unless user
 
     user_id == user.id
+  end
+
+  def over_participations
+    if participating_users.length > number_of_members
+      errors.add(:number_of_members, 'が参加者を下回っています')
+    end
   end
 end

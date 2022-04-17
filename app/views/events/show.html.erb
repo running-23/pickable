@@ -42,7 +42,9 @@
     <div class="row text-center mt-4">
     <div class="col-12">
       <% if @event.created_by?(current_user) %>
-        <%= link_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: "Pickableを発動しますか？\n※1回しか発動できません。" }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts > 0 }" } %>
+        <%= link_to event_pickable_path(@event), { method: :post, data: { confirm: "Pickableを発動しますか？\n※1回しか発動できません。" }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts > 0 }" } do %>
+          <i class="fa-solid fa-handshake-simple"></i> Pickable <i class="fa-solid fa-handshake-simple"></i>
+        <% end %>
 
         <div class="row justify-content-center mt-3">
           <div class="col-1">
