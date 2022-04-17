@@ -40,7 +40,7 @@
     <div class="row text-center mt-4">
     <div class="col-12">
       <% if @event.created_by?(current_user) %>
-        <%= link_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: "Pickableを発動しますか？\n※1回しか発動できません。" }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts > 0 }" } %>
+        <%= link_to 'Pickable', event_pickable_path(@event), { method: :post, data: { confirm: "Pickableを発動しますか？\n※1回のみ使用可能" }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts > 0 }" } %>
 
         <div class="row justify-content-center mt-2">
           <a href="javascript:void(0)" id="openModal" class="col-2 hover-target simple-a-tag"><i class="fa-regular fa-circle-question"></i> Pickableとは</a>

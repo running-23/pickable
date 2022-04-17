@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
+  before_action :authorize_category
 
   def index
     @categories = Category.all
@@ -40,6 +41,10 @@ class CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
+  end
+
+  def authorize_category
+    authorize Category
   end
 
   def category_params
