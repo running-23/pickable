@@ -59,9 +59,10 @@
     <h6 class="col-auto text-center">
       Pickableは参加者の自主的な参加に加えて<br>
       希望しているジャンルのイベントに<br>
-      <span class="small text-muted">※</span>自動的にランダムで選出される<br>
+      <span class="small text-muted">※</span>自動的にランダム選出される<br>
       <span class="fs-4">イベント企画サービス</span>です。<br>
-      <span class="small text-muted">※設定による</span>
+      <span class="small text-muted">※設定による</span><br>
+      <br>
     </h6>
   </div>
 </div>
@@ -159,7 +160,10 @@
                   </tr>
                   <tr>
                     <th scope="row">ひよコネリンク</th>
-                    <td>ひよこコネクトに登録してる場合はマイページのURLを入れてください</td>
+                    <td>
+                      ひよこコネクトに登録してる場合はマイページのURLを入れてください。<br>
+                      入力するといいことあるかも…？
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -182,7 +186,7 @@
           </div>
           <div class="row justify-content-center">
             <h5 class="col-auto text-center text-decoration-underline">
-              参加方法
+              1. 参加方法
             </h5>
           </div>
           <div class="row justify-content-center mt-1">
@@ -192,7 +196,7 @@
           </div>
           <div class="row justify-content-center mt-5">
             <h5 class="col-auto text-center">
-              1. 参加ボタンで
+              A. 参加ボタンで
             </h5>
           </div>
           <div class="row justify-content-center mt-2">
@@ -207,7 +211,7 @@
           </div>
           <div class="row justify-content-center mt-5">
             <h5 class="col-auto text-center">
-              2. ランダム選出で
+              B. ランダム選出で
             </h5>
           </div>
           <div class="row justify-content-center mt-3 mb-5">
@@ -222,7 +226,7 @@
           </div>
           <div class="row justify-content-center mt-5 pt-5">
             <h5 class="col-auto text-center text-decoration-underline">
-              参加のキャンセル方法
+              2. 参加のキャンセル方法
             </h5>
           </div>
           <div class="row justify-content-center my-3">
@@ -238,7 +242,7 @@
           </div>
           <div class="row justify-content-center mt-5 pt-5">
             <h5 class="col-auto text-center text-decoration-underline">
-              参加イベント自体のキャンセル
+              2-1. 参加イベント自体のキャンセル
             </h5>
           </div>
           <div class="row justify-content-center mt-4 mb-5">
@@ -247,6 +251,27 @@
               メールで通知されます。<br>
               <br>
               諦めきれない場合は主催してみよう！
+            </h6>
+          </div>
+          <div class="row justify-content-center mt-5 pt-5">
+            <h5 class="col-auto text-center text-decoration-underline">
+              3. イベント当日
+            </h5>
+          </div>
+          <div class="row justify-content-center mt-4 mb-3">
+            <h6 class="col-auto text-center">
+              イベント当日は開催の1〜2時間前に"リマインドメール"が届きます。<br>
+              時刻になったら開催場所に集合してイベントを楽しもう！
+            </h6>
+          </div>
+          <div class="row justify-content-center mt-2 mb-5">
+            <h6 class="col-auto text-center">
+              <i class="fa-solid fa-cat fs-3 lead"></i>
+              <br>
+              ※大変申し訳ございません。<br>
+              現在イベントの情報を盗む野良ネコが出没しており<br>
+              対象イベントの表示ができておりません。<br>
+              ネコに免じてお許しください。
             </h6>
           </div>
         </div>
@@ -357,3 +382,64 @@
   </div>
 </div>
 
+<div class="container mt-10 pt-5">
+  <div class="row justify-content-center mb-3">
+    <h3 class="col-auto orange text-center">
+      From Devlopers<br>
+      <span class='font-yusei'>〜開発チームより〜</span>
+    </h3>
+  </div>
+  <div class="row justify-content-center">
+    <h6 class="col-auto text-center">
+      Pickableは<br>
+      イベントの開催や参加におけるコストを<br>
+      できる限り低くすることで、コミュニティの活発化をしたい。<br>
+      ランダム選出で偶発的な出会いを生み出し<br>
+      何らかのきっかけを作れたら…。<br>
+      そんな思いから生まれたサービスです。<br>
+      コミュニティを活用する一助になれば幸いです！<br>
+    </h6>
+  </div>
+  <div class="row justify-content-center my-5">
+    <h2 class="col-auto red text-center">
+      Let's Pickable!<br>
+      Enjoy Serendipity!
+    </h2>
+  </div>
+</div>
+
+<div class="container mt-3 mb-5">
+  <!-- 認証ボタン -->
+  <% unless logged_in? %>
+    <div class="row justify-content-center mt-5">
+      <div class="col-auto text-center">
+        認証して始める！
+      </div>
+    </div>
+    <div class="row justify-content-center my-3">
+      <div class="col-auto">
+        <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
+          <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- To Events -->
+  <div class="row justify-content-center mt-5">
+    <div class="col-auto text-center">
+      <% if logged_in? %>
+        開催中のイベントを見に行く
+      <% else %>
+        先にイベントを見てみる？
+      <% end %>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2 mb-5 pb-5">
+    <div class="col-auto">
+      <%= link_to events_path, class: "btn btn-outline-warning rounded-pill" do %>
+        <h6 class="has-text-weight-medium my-auto">Look in Events</h6>
+      <% end %>
+    </div>
+  </div>
+</div>
