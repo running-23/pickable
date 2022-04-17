@@ -40,7 +40,7 @@ class Event < ApplicationRecord
   validate :over_participations
 
   def past_scheduled_date
-    if scheduled_date != nil && Time.current >= scheduled_date
+    if !scheduled_date.nil? && Time.current >= scheduled_date
       errors.add(:scheduled_date,
                  'は、現在時刻以降を入力して下さい')
     end

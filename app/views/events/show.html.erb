@@ -8,18 +8,25 @@
     <div class="display-6">
       <%= l @event.scheduled_date, format: :short %>
     </div>
-    <div class="h5 mt-1">
+    <div class="h5 mt-2">
       ＠  <%= @event.place %>
     </div>
-    <div>
-    <div class="badge bg-category col-1 fz12 mt-1">
-      <%= @event.category.name %>
-    </div>
-    <div class="mt-5">
-      <strong>主催：</strong>
+    <div class="h5 mt-1">
+      <strong><i class="fa-solid fa-user"></i></strong>
       <%= @event.user.name %>
     </div>
-    <div class="h4 text-center mt-2 col-8 mx-auto">
+  </div>
+
+  <div class="row text-center mt-2">
+    <div class="badge bg-category mx-auto col-1 fz12 mt-1">
+      <%= @event.category.name %>
+    </div>
+  </div>
+
+
+  <div class="h5 text-start lh-base mx-auto col-7 mt-5 desc">
+    <div class="p-3">
+      <div class="text-center skyblue mb-3">イベント詳細</div>
       <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"' 'rel="noopener noreferrer"')%>
     </div>
   </div>
@@ -31,8 +38,8 @@
     <div class="justify-content-start row w-60 ms-4">
       <% @participated_users.each do |participated_user|%>
         <div class="col-2 my-2">
-          <%# <%= image_tag participated_user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %1> %>
-          <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '60x60' %></div>
+          <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
+          <%# <%= image_tag participated_user.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %>
           <div class="text-wrap text-break my-2 fz075"><%= participated_user.name %></div>
         </div>
       <% end %>
@@ -45,6 +52,25 @@
         <%= link_to event_pickable_path(@event), { method: :post, data: { confirm: "Pickableを発動しますか？\n※1回しか発動できません。" }, class: "btn btn-outline-info-pick rounded-pill fz25 #{ 'disabled' if @event.pickable_counts > 0 }" } do %>
           <i class="fa-solid fa-handshake-simple"></i> Pickable <i class="fa-solid fa-handshake-simple"></i>
         <% end %>
+
+        <div class="row justify-content-center mt-2">
+          <a href="javascript:void(0)" id="openModal" class="col-2 hover-target simple-a-tag"><i class="fa-regular fa-circle-question"></i> Pickableとは</a>
+        </div>
+        <!-- モーダルエリアここから -->
+        <section id="modalArea" class="modalArea">
+          <div id="modalBg" class="modalBg"></div>
+          <div class="modalWrapper">
+            <div class="modalContents">
+              <div class="h2 red">Pickableとは？</div>
+              <p class="h5 mt-3">イベント参加者を登録ユーザーからランダムでピックアップする機能のこと！</p>
+              <p>※ 1回のみ使用可能</p>
+            </div>
+            <div id="closeModal" class="closeModal">
+              ×
+            </div>
+          </div>
+        </section>
+        <!-- モーダルエリアここまで -->
 
         <div class="row justify-content-center mt-3">
           <div class="col-1">
@@ -78,4 +104,4 @@
     </div>
   </div>
 
-  <div class="row mt-3"><%= link_to 'Back', events_path %></div>
+  <div class="row col-1 text-center mx-auto m-3"><%= link_to 'Back', events_path %></div>
