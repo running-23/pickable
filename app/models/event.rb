@@ -53,8 +53,6 @@ class Event < ApplicationRecord
   end
 
   def over_participations
-    if participating_users.length > number_of_members
-      errors.add(:number_of_members, 'が参加者を下回っています')
-    end
+    errors.add(:number_of_members, 'が参加者を下回っています') if participating_users.length > number_of_members
   end
 end
