@@ -8,17 +8,21 @@
     <div class="display-6">
       <%= l @event.scheduled_date, format: :short %>
     </div>
-    <div class="h5 mt-1">
+    <div class="h5 mt-2">
       ＠  <%= @event.place %>
     </div>
-    <div>
+    <div class="h5 mt-1">
+      <strong><i class="fa-solid fa-user"></i></strong>
+      <%= @event.user.name %>
+    </div>
+  </div>
+
+  <div class="row text-center mt-2">
     <div class="badge bg-category mx-auto col-1 fz12 mt-1">
       <%= @event.category.name %>
     </div>
-    <div class="mt-5">
-      <strong>主催：</strong>
-      <%= @event.user.name %>
-    </div>
+  </div>
+  <div class="row text-center mt-5">
     <div class="h4 text-center mx-auto mt-2 col-8">
       <%= raw Rinku.auto_link(simple_format(h(@event.description), {}, sanitize: false, wrapper_tag: "div") ,:all, 'target="_blank"' 'rel="noopener noreferrer"')%>
     </div>
