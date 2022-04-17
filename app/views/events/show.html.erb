@@ -37,11 +37,11 @@
       メンバー  <%= @event.participations.size %> / <%= @event.number_of_members %>
     </div>
     <div class="justify-content-start row w-60 ms-4">
-      <% @event.participations.each do |participation|%>
+      <% @participated_users.each do |participated_user|%>
         <div class="col-2 my-2">
           <div><%= image_tag 'pick.png', class: 'rounded-circle', size: '50x50' %></div>
-          <%# <%= image_tag participation.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %>
-          <div class="text-wrap text-break my-2 fz075"><%= participation.user.name %></div>
+          <%# <%= image_tag participated_user.user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %>
+          <div class="text-wrap text-break my-2 fz075"><%= participated_user.name %></div>
         </div>
       <% end %>
     </div>
