@@ -13,7 +13,7 @@
         <ul class="navbar-nav mr-auto mb-md-0">
           <li class="nav-item dropdown my-auto">
             <a class="nav-link dropdown-toggle red hover-target h5" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Event
+              <i class="fa-solid fa-magnifying-glass lead"></i> Event
             </a>
             <ul class="dropdown-menu bg-light-orange-imp" aria-labelledby="navbarDropdownMenuLink">
               <li><%= link_to 'Events', events_path, class: 'nav-link orange-imp hover-target ms-3' %></li>
@@ -21,12 +21,16 @@
             </ul>
           </li>
 
-          <li class="nav-item my-auto">
-            <%= link_to 'My Page', user_path(current_user.id), class: 'nav-link red hover-target h5' %>
+          <li class="nav-item my-auto mx-2">
+            <%= link_to user_path(current_user.id), class: 'nav-link red hover-target h5' do %>
+              <i class="fa-solid fa-user lead"></i> My Page
+            <% end %>
           </li>
 
-          <li class="nav-item my-auto">
-            <%= link_to 'Logout', logout_path ,class: 'nav-link red hover-target h5', method: :delete %>
+          <li class="nav-item my-auto mx-2">
+            <%= link_to logout_path ,class: 'nav-link red hover-target h5', method: :delete do %>
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
+            <% end %>
           </li>
         </ul>
       </div>

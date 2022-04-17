@@ -15,8 +15,10 @@
   <!-- 認証ボタン -->
   <div class="row justify-content-center my-3">
     <div class="col-auto">
-      <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
-        <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+      <% unless logged_in? %>
+        <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
+          <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -24,7 +26,11 @@
   <!-- To Events -->
   <div class="row justify-content-center mt-5">
     <div class="col-auto text-center">
-      先にイベントを見てみる？
+      <% if logged_in? %>
+        開催中のイベントを見に行く
+      <% else %>
+        先にイベントを見てみる？
+      <% end %>
     </div>
   </div>
   <div class="row justify-content-center mt-2">
@@ -109,8 +115,12 @@
           </div>
           <div class="row justify-content-center my-3">
             <div class="col-auto">
-              <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
-                <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+              <% unless logged_in? %>
+                <%= link_to auth_at_provider_path(provider: :github), class: "btn btn-outline-info rounded-pill" do %>
+                  <h5 class="has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
+                <% end %>
+              <% else %>
+                <h5 class="btn btn-outline-info rounded-pill has-text-weight-medium my-auto"><i class="fa-brands fa-github lead"></i> SignUp with Github</h5>
               <% end %>
             </div>
           </div>
