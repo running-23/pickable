@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def show
-    participated_events = current_user.participating_events
+    participated_events = @user.participating_events
                                       .eager_load(:category, :participations)
 
     @events_from_today = participated_events.from_today
