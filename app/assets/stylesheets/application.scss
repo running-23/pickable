@@ -17,10 +17,15 @@
 /* font-awesomeの読み込み */
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 
- /* フォント */
-@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=RocknRoll+One&display=swap');
+// フォント
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Yusei+Magic&display=swap');
 * {
-  font-family: 'Coda Caption', 'RocknRoll One', sans-serif;
+  font-family: 'Coda Caption', 'Yusei Magic', sans-serif;
+  }
+
+// 英語にyuseiを適用するクラス
+.font-yusei {
+  font-family: 'Yusei Magic', sans-serif;
 }
 
 /* メインカラー */
@@ -86,6 +91,15 @@ body {
   border: 5px solid !important;
 }
 
+.btn-outline-warning {
+  border-color: #ffc107 !important;
+  border: 5px solid !important;
+  &:hover {
+    border-color: #ffc107 !important;
+    color: #fff !important;
+  }
+}
+
 // ランダム設定用
 .accepted {
   background-color: #FF9078;
@@ -110,6 +124,10 @@ body {
   margin-top: 4rem;
 }
 
+.mt-10 {
+  margin-top: 5rem;
+}
+
 // 未ホバー時に透明度を下げてホバー時にオリジナルに
 .hover-target {
   opacity: .8;
@@ -132,4 +150,17 @@ body {
   width: 40%;
   margin: 0 auto;
   text-align: left;
+}
+
+// nav-link内のbuttonのスタイル制御
+button.nav-link {
+  color: #bfbfbf;
+  &:hover {
+    color: #FF9D76;
+  }
+}
+
+button.active {
+  color: #FF9D76 !important;
+  background-color: #fff !important;
 }

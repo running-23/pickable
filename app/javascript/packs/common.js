@@ -11,7 +11,7 @@ document.addEventListener('turbolinks:load', window.buttonClick = function butto
 });
 
 // events#showモーダル
-document.addEventListener('turbolinks:load', window.buttonClick = function buttonClick() {
+document.addEventListener('turbolinks:load', window.buttonClickCaption = function buttonClickCaption() {
   $(function () {
     $('#openModal').click(function(){
         $('#modalArea').fadeIn();

@@ -5,10 +5,11 @@ class UsersController < ApplicationController
   def edit; end
 
   def show
-    @events_from_today =
-      current_user.participating_events.includes(%i[category participations]).from_today
-    @events_till_yesterday =
-      current_user.participating_events.includes(%i[category participations]).till_yesterday
+    participated_events = current_user.participating_events
+                                      .eager_load(:category, :participations)
+
+    @events_from_today = participated_events.from_today
+    @events_till_yesterday = participated_events.till_yesterday
   end
 
   def update
@@ -30,6 +31,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :hiyoconne_url, :accept_random, category_ids: [])
+    params.require(:user).permit(:name, :hiyoconne_url, :accept_random, :role, category_ids: [])
   end
 end

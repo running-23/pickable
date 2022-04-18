@@ -11,12 +11,16 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto mb-md-0">
-          <li class="nav-item my-auto">
-            <%= link_to 'Events', events_path ,class: 'nav-link red hover-target h5' %>
+          <li class="nav-item my-auto mx-2">
+            <%= link_to events_path ,class: 'nav-link red hover-target h5' do %>
+              <i class="fa-solid fa-magnifying-glass lead"></i> Event
+            <% end %>
           </li>
           
-          <li class="nav-item my-auto">
-            <%= link_to 'Login', auth_at_provider_path(provider: :github), class: 'nav-link red hover-target h5' %>
+          <li class="nav-item my-auto mx-2">
+            <%= link_to auth_at_provider_path(provider: :github), class: 'nav-link red hover-target h5' do %>
+              <i class="fa-brands fa-github lead"></i> Login
+            <% end %>
           </li>
         </ul>
       </div>
