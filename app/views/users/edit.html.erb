@@ -84,11 +84,6 @@
           </div>
         </section>
 
-      <div class="row">
-        <%= form.label :role %>
-        <%= form.select :role, User.roles_i18n.invert, {}, class: 'form-control' %>
-      </div>
-
       <div class="row justify-content-center my-5 h5">
         <div class="col-auto">
           <%= form.submit class: 'btn btn-outline-info rounded-pill' %>
