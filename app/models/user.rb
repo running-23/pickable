@@ -42,6 +42,7 @@ class User < ApplicationRecord
   validates :hiyoconne_url, uniqueness: true,
                             format: { with: %r{\A\z|\Ahttps://hiyoco-connect\.herokuapp\.com/profiles/\d{1,3}\Z},
                                       message: 'が不正なURLです。誤解だったらゴメンね！' }, allow_blank: true
+  validate :checked_categories
 
   enum role: { general: 0, admin: 1 }
   enum accept_random: { accepted: 0, denied: 1 }
@@ -56,5 +57,13 @@ class User < ApplicationRecord
 
   def participated?(event)
     participating_events.include? event
+  end
+
+  private
+
+  def checked_categories
+    if accept_random == 'accepted' && categories.empty?
+      errors.add(:category, 'を選択してください')
+    end
   end
 end
