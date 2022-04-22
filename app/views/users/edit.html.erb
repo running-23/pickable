@@ -36,6 +36,7 @@
       <div class="row justify-content-center h5" id="select-category">
         <div class="col-2 orange text-start offset-3">
           <%= form.label :category_id, class: "col-form-label align-middle" %>
+          <span class="red small">*</span>
         </div>
         <div class="col-6 my-auto row h4">
           <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>

@@ -30,7 +30,7 @@ class Event < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 38 }
   validates :description, presence: true
   validates :number_of_members, presence: true, numericality: { greater_than: 1, less_than: 101 }
   validates :scheduled_date, presence: true

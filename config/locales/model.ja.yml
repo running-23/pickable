@@ -19,6 +19,7 @@ ja:
         role: 権限
         category_id: 希望ジャンル
         hiyoconne_url: ひよコネリンク
+        category: 希望ジャンル 
       event:
         title: タイトル
         description: 詳細
