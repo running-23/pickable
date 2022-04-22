@@ -32,7 +32,7 @@ class Event < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 38 }
   validates :description, presence: true
-  validates :number_of_members, presence: true, numericality: { greater_than: 1 }
+  validates :number_of_members, presence: true, numericality: { greater_than: 1, less_than: 101 }
   validates :scheduled_date, presence: true
   validates :place, presence: true
   validates :pickable_counts, presence: true, inclusion: { in: 0..1 }
