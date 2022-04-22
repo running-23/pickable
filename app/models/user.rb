@@ -62,8 +62,6 @@ class User < ApplicationRecord
   private
 
   def checked_categories
-    if accept_random == 'accepted' && categories.empty?
-      errors.add(:category, 'を選択してください')
-    end
+    errors.add(:category, 'を選択してください') if accept_random == 'accepted' && categories.empty?
   end
 end
