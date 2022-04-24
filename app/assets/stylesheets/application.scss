@@ -89,6 +89,11 @@ body {
   color: #1FFFFF !important;
   border-color: #1FFFFF !important;
   border: 5px solid !important;
+  &:hover {
+    background-color: #1FFFFF !important;
+    border-color: #1FFFFF !important;
+    color: #fff !important;
+  }
 }
 
 .btn-outline-warning {
