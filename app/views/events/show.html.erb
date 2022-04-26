@@ -41,8 +41,8 @@
       <% @participated_users.each do |participated_user|%>
         <div class="col-2 my-2">
           <%= link_to user_path(participated_user), class: 'simple-a-tag' do %>
-            <div><%= image_tag 'hiyoconne_icon.png', class: 'rounded-circle', size: '50x50' %><%#</div>
-            <%# <div><%= image_tag participated_user.remote_avatar_url, class: 'rounded-circle', size: '50x50' %></div>
+            <%# <div><%= image_tag 'hiyoconne_icon.png', class: 'rounded-circle', size: '50x50' %><%#</div> %>
+            <div><%= image_tag participated_user.remote_avatar_url, class: 'rounded-circle', size: '50x50'</div>
             <div class="text-wrap text-break my-2 fz075"><%= participated_user.name %></div>
           <% end %>
         </div>
