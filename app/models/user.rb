@@ -62,6 +62,6 @@ class User < ApplicationRecord
   private
 
   def checked_categories
-    errors.add(:category, 'を1つ以上選択してください') if accepted? && categories.empty?
+    errors.add(:category_id, 'を1つ以上選択してください') if accepted? && categories.empty?
   end
 end

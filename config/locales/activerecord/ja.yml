@@ -27,8 +27,6 @@ ja:
         scheduled_date: イベント開始日時
         place: 開催場所
         category_id: ジャンル
-        category: ジャンル
-
   enums:
     user:
       role:

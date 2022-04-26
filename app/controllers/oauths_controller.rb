@@ -17,7 +17,7 @@ class OauthsController < ApplicationController
         UserMailer.with(user: @user).welcome_email.deliver_now
         reset_session
         auto_login(@user)
-        redirect_to edit_user_path(@user), success: '登録ありがとう！ついでに初期設定もよろしく！'
+        redirect_to edit_user_path(@user), t('.first_login')
       rescue StandardError
         redirect_to root_path, danger: "#{provider.titleize}アカウントでのログインに失敗しました。"
       end

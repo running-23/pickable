@@ -1,0 +1,59 @@
+ja:
+  defaults:
+    require_login: ログインしてください
+    invalid_user: 権限がありません
+  
+  categories:
+    index:
+    show:
+    new:
+    edit:
+    create:
+      success: ジャンルを作成しました
+    update:
+      success: ジャンルを更新しました
+    delete:
+      success: ジャンルを削除しました
+
+  events:
+    index:
+    show:
+    new:
+    edit:
+    create:
+      success: イベントを作成しました！
+    update:
+      success: イベントを更新しました！
+    delete:
+      success: イベントを中止しました。
+
+  oauths:
+    callback:
+      first_login: 登録ありがとう！ついでに初期設定もよろしく！
+
+  participations:
+    create:
+      success: 参加表明しました
+      fail: 開催希望人数を超えています
+    destroy:
+      success: 参加をキャンセルしました
+
+  pickables:
+    create:
+      success: Pickableを発動しました
+      fail: Pickable発動は一度限りです
+
+  static_pages:
+
+  user_sessions:
+    destroy:
+      success: ログアウトしました
+
+  users:
+    show:
+    edit:
+    update:
+      success: ユーザー情報が更新されました
+
+
+
