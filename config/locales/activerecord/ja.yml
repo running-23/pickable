@@ -17,7 +17,6 @@ ja:
         role: 権限
         category_id: 希望ジャンル
         hiyoconne_url: ひよコネリンク
-        category: 希望ジャンル 
       event:
         title: タイトル
         description: 詳細
@@ -25,6 +24,7 @@ ja:
         scheduled_date: イベント開始日時
         place: 開催場所
         category_id: ジャンル
+        # 所要時間を追加してください
   enums:
     user:
       role:
