@@ -59,7 +59,9 @@ ja:
 
   users:
     show:
+      title: My Page
     edit:
+      title: Account Settings
     update:
       success: ユーザー情報が更新されました
 
