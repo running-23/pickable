@@ -16,19 +16,23 @@ ja:
       success: ジャンルを作成しました
     update:
       success: ジャンルを更新しました
-    delete:
+    destroy:
       success: ジャンルを削除しました
 
   events:
     index:
+      title: Events
     show:
+      title: Event Detail
     new:
+      title: Create Event
     edit:
+      title: Edit Event
     create:
       success: イベントを作成しました！
     update:
       success: イベントを更新しました！
-    delete:
+    destroy:
       success: イベントを中止しました。
 
   oauths:
