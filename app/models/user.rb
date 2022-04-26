@@ -62,6 +62,9 @@ class User < ApplicationRecord
   private
 
   def checked_categories
-    errors.add(:category_id, I18n.t('defaults.invalid_no_category')) if accepted? && categories.empty?
+    return unless accepted? && categories.empty?
+
+    errors.add(:category_id,
+               I18n.t('defaults.invalid_no_category'))
   end
 end
