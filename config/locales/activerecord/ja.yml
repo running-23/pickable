@@ -1,11 +1,9 @@
 ja:
   activerecord:
-    # User.model_name.human
     models:
       user: ユーザー
       event: イベント
-      category: カテゴリー
-    # User.human_attributes_name(:name)
+      category: ジャンル
     attributes:
       id: ID
       created_at: 作成日時

@@ -2,7 +2,11 @@ ja:
   defaults:
     require_login: ログインしてください
     invalid_user: 権限がありません
-  
+    past_date: は、現在時刻以降を入力して下さい
+    min_participant: が参加者を下回っています
+    invalid_url: が不正なURLです。誤解だったらゴメンね！
+    invalid_no_category: を1つ以上選択してください
+
   categories:
     index:
     show:
