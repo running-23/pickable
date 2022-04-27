@@ -41,6 +41,13 @@
       </div>
 
       <div class="row justify-content-center mb-5 h5">
+        <%= form.label :timescale, class: "col-form-label col-2 offset-2 orange text-start timescale-label" %>
+        <div class="col-form-control col-6 h6 timescale">
+          <%= form.time_select :timescale %>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-5 h5">
         <%= form.label :place, class: "col-form-label col-2 offset-2 orange text-start" %>
         <%= form.text_field :place, class: "col-form-control col-6 h6" %>
       </div>

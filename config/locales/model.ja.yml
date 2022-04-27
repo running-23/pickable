@@ -25,6 +25,7 @@ ja:
         description: 詳細
         number_of_members: 開催希望人数
         scheduled_date: イベント開始日時
+        timescale: 所要時間
         place: 開催場所
         category_id: ジャンル
         category: ジャンル
