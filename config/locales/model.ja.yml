@@ -29,6 +29,9 @@ ja:
         place: 開催場所
         category_id: ジャンル
         category: ジャンル
+  time:
+    formats:
+      very_short: "%H:%M"
 
   enums:
     user:
