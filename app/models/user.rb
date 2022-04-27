@@ -41,7 +41,7 @@ class User < ApplicationRecord
   validates :accept_random, presence: true
   validates :hiyoconne_url, uniqueness: true,
                             format: { with: %r{\A\z|\Ahttps://hiyoco-connect\.herokuapp\.com/profiles/\d{1,3}\Z},
-                                      message: 'が不正なURLです。誤解だったらゴメンね！' }, allow_blank: true
+                                      message: I18n.t('defaults.invalid_url') }, allow_blank: true
   validate :checked_categories
 
   enum role: { general: 0, admin: 1 }
@@ -62,6 +62,9 @@ class User < ApplicationRecord
   private
 
   def checked_categories
-    errors.add(:category, 'を1つ以上選択してください') if accepted? && categories.empty?
+    return unless accepted? && categories.empty?
+
+    errors.add(:category_id,
+               I18n.t('defaults.invalid_no_category'))
   end
 end

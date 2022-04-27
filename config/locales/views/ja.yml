@@ -1,0 +1,69 @@
+ja:
+  defaults:
+    require_login: ログインしてください
+    invalid_user: 権限がありません
+    past_date: は、現在時刻以降を入力して下さい
+    min_participant: が参加者を下回っています
+    invalid_url: が不正なURLです。誤解だったらゴメンね！
+    invalid_no_category: を1つ以上選択してください
+
+  categories:
+    index:
+    show:
+    new:
+    edit:
+    create:
+      success: ジャンルを作成しました
+    update:
+      success: ジャンルを更新しました
+    destroy:
+      success: ジャンルを削除しました
+
+  events:
+    index:
+      title: Events
+    show:
+      title: Event Detail
+    new:
+      title: Create Event
+    edit:
+      title: Edit Event
+    create:
+      success: イベントを作成しました！
+    update:
+      success: イベントを更新しました！
+    destroy:
+      success: イベントを中止しました。
+
+  oauths:
+    callback:
+      first_login: 登録ありがとう！ついでに初期設定もよろしく！
+
+  participations:
+    create:
+      success: 参加表明しました
+      fail: 開催希望人数を超えています
+    destroy:
+      success: 参加をキャンセルしました
+
+  pickables:
+    create:
+      success: Pickableを発動しました
+      fail: Pickable発動は一度限りです
+
+  static_pages:
+
+  user_sessions:
+    destroy:
+      success: ログアウトしました
+
+  users:
+    show:
+      title: My Page
+    edit:
+      title: Account Settings
+    update:
+      success: ユーザー情報が更新されました
+
+
+

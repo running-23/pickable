@@ -20,9 +20,9 @@ class PickablesController < ApplicationController
         picked_user.participate(event)
       end
       PickableMailer.with(user: picked_users, event: event).report_pickable.deliver_now
-      redirect_to event, success: 'Pickableを発動しました'
+      redirect_to event, success: t('.success')
     else
-      redirect_to event, danger: 'Pickable発動は1回限りです'
+      redirect_to event, danger: t('.fail')
     end
   end
 end
