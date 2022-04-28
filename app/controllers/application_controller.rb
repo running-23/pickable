@@ -7,10 +7,10 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to root_path, warning: 'ログインしてください'
+    redirect_to root_path, warning: t('defaults.require_login')
   end
 
   def category_not_authorized
-    redirect_to root_path, danger: '権限がありません'
+    redirect_to root_path, danger: t('defaults.invalid_user')
   end
 end

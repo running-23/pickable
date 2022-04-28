@@ -1,11 +1,9 @@
 ja:
   activerecord:
-    # User.model_name.human
     models:
       user: ユーザー
       event: イベント
-      category: カテゴリー
-    # User.human_attributes_name(:name)
+      category: ジャンル
     attributes:
       id: ID
       created_at: 作成日時
@@ -19,7 +17,6 @@ ja:
         role: 権限
         category_id: 希望ジャンル
         hiyoconne_url: ひよコネリンク
-        category: 希望ジャンル 
       event:
         title: タイトル
         description: 詳細
@@ -28,11 +25,6 @@ ja:
         timescale: 所要時間
         place: 開催場所
         category_id: ジャンル
-        category: ジャンル
-  time:
-    formats:
-      very_short: "%H:%M"
-
   enums:
     user:
       role:

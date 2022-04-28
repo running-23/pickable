@@ -1,5 +1,7 @@
+<% content_for(:title, t('.title')) %>
+
 <div class="container justify-content-center text-center">
-  <h1 class="red mt-5">Editing Event</h1>
+  <h1 class="red mt-5"><%= t('.title') %></h1>
 
   <%= render 'form', event: @event %>
 

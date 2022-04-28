@@ -38,12 +38,12 @@ class Event < ApplicationRecord
   validates :place, presence: true
   validates :pickable_counts, presence: true, inclusion: { in: 0..1 }
   validate :past_scheduled_date
-  validate :over_participations, on: :update
+  validate :limit_reduce_number_of_members, on: :update
 
   def past_scheduled_date
     if !scheduled_date.nil? && Time.current >= scheduled_date
       errors.add(:scheduled_date,
-                 'は、現在時刻以降を入力して下さい')
+                 I18n.t('defaults.past_date'))
     end
   end
 
@@ -53,9 +53,9 @@ class Event < ApplicationRecord
     user_id == user.id
   end
 
-  def over_participations
+  def limit_reduce_number_of_members
     if !number_of_members.nil? && participating_users.length > number_of_members
-      errors.add(:number_of_members, 'が参加者を下回っています')
+      errors.add(:number_of_members, I18n.t('defaults.min_participant'))
     end
   end
 end
