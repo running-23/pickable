@@ -16,7 +16,7 @@
     </div>
 
     <div class="h5 mt-3">
-      <% if @event.timescale %>
+      <% if @event.timescale.to_s != "0001-01-01 00:00:00 +0918" %>
         <div class="text-center"><i class="fa-solid fa-hourglass"></i>  <%= l @event.timescale, format: :very_short %></div>
       <% end %>
     </div>
