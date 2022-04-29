@@ -43,7 +43,7 @@
       <div class="row justify-content-center mb-5 h5">
         <%= form.label :timescale, class: "col-form-label col-2 offset-2 orange text-start timescale-label" %>
         <div class="col-form-control col-6 h6 timescale">
-          <%= form.time_select :timescale %>
+          <%= form.datetime_select :timescale, {discard_month: true, discard_year: true, minute_step: 30, default: Time.now.beginning_of_day, include_blank: true} %>
         </div>
       </div>
 

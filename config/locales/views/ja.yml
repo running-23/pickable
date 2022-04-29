@@ -67,7 +67,7 @@ ja:
 
   time:
     formats:
-      very_short: "%H:%M"
+      very_short: "%H時間%M分"
 
 
 
