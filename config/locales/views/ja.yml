@@ -65,5 +65,9 @@ ja:
     update:
       success: ユーザー情報が更新されました
 
+  time:
+    formats:
+      very_short: "%H時間%M分"
+
 
 

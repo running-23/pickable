@@ -42,6 +42,17 @@
   border: #FF9D76 2px solid;
 }
 
+// timescale周りの調整
+.timescale {
+  width: 14% !important;
+  margin-right: 30.3rem;
+  margin-top: 8px !important;
+}
+.timescale-label {
+  width: 15.5% !important;
+}
+
+
 /* モーダルCSS */
 .modalArea {
   display: none;

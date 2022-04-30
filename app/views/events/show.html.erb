@@ -4,14 +4,21 @@
 
 <div class="container events-show">
   <div class="row text-center">
-    <div class="mt-4 mb-4">
+    <div class="mt-4 mb-1">
       <h2 class="red display-3"><%= @event.title %></h2>
     </div>
+    <div class="h5 mb-4">
+      ＠  <%= @event.place %>
+    </div>
+
     <div class="display-6">
       <%= l @event.scheduled_date, format: :short %>
     </div>
-    <div class="h5 mt-2">
-      ＠  <%= @event.place %>
+
+    <div class="h5 mt-3">
+      <% unless @event.timescale.to_s == "0001-01-01 00:00:00 +0918" %>
+        <div class="text-center"><i class="fa-solid fa-hourglass"></i>  <%= l @event.timescale, format: :very_short %></div>
+      <% end %>
     </div>
     <div class="h5 mt-1">
       <strong><i class="fa-solid fa-user"></i></strong>

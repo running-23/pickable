@@ -8,6 +8,7 @@
 #  pickable_counts   :integer          default(0), not null
 #  place             :string           not null
 #  scheduled_date    :datetime         not null
+#  timescale         :datetime
 #  title             :string           not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
