@@ -25,6 +25,7 @@ ja:
         timescale: 所要時間
         place: 開催場所
         category_id: ジャンル
+        category: ジャンル
   enums:
     user:
       role:
