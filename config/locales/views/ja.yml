@@ -50,6 +50,7 @@ ja:
     create:
       success: Pickableを発動しました
       fail: Pickable発動は一度限りです
+      is_past: 終了したイベントです
 
   static_pages:
 

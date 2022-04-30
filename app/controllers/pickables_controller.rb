@@ -24,5 +24,7 @@ class PickablesController < ApplicationController
     else
       redirect_to event, danger: t('.fail')
     end
+  rescue ActiveRecord::RecordInvalid
+    redirect_to event, danger: t('.is_past')
   end
 end
