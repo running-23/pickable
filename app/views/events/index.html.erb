@@ -11,7 +11,34 @@
       <% end %>
     </div>
   </div>
-  <%= render 'shared/event', events: @events %>
 </div>
 
-<%= paginate @events %>
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <h1 class="col-auto orange">
+      本日以降開催のイベント
+    </h1>
+  </div>
+  <% if @events_from_today %>
+    <%= render 'shared/event', events: @events_from_today %>
+  <% else %>
+    <h4 class="col-auto text-muted ">
+      開催予定のイベントはありません。<br>
+      過去のイベントを参考に主催してみよう！
+    </h4>
+  <% end %>
+</div>
+
+<div class="row justify-content-center my-5 pt-5">
+  <div class="col-6 border-orange">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center my-5 py-5">
+    <h1 class="col-auto orange">
+      過去に開催されたイベント
+    </h1>
+  </div>
+  <%= render 'shared/event', events: @events_till_yesterday %>
+</div>
