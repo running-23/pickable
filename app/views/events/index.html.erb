@@ -21,6 +21,9 @@
   </div>
   <% if @events_from_today %>
     <%= render 'shared/event', events: @events_from_today %>
+    <div class="col-auto">
+      <%= paginate @events_from_today, :param_name => 'future_page', theme: 'bootstrap-5' %>
+    </div>
   <% else %>
     <h4 class="col-auto text-muted ">
       開催予定のイベントはありません。<br>
@@ -40,5 +43,12 @@
       過去に開催されたイベント
     </h1>
   </div>
-  <%= render 'shared/event', events: @events_till_yesterday %>
+  <% if @events_till_yesterday %>
+    <%= render 'shared/event', events: @events_till_yesterday %>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <%= paginate @events_till_yesterday, :param_name => 'past_page', theme: 'bootstrap-5' %>
+      </div>
+    </div>
+  <% end %>
 </div>
