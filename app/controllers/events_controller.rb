@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
 
   def index
-    events =Event.eager_load(:category, :participations)
+    events = Event.eager_load(:category, :participations)
     @events_from_today = events.from_today
     @events_till_yesterday = events.till_yesterday
   end
