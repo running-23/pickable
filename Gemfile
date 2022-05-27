@@ -36,8 +36,8 @@ gem 'rails-i18n', '~> 6.0'
 gem 'sorcery'
 
 # ページネーション
-gem 'kaminari'
 gem 'bootstrap5-kaminari-views'
+gem 'kaminari'
 
 # cssをinline変換
 gem 'premailer-rails'
