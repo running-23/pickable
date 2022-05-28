@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @participated_users = @event.participating_users.order(:id)
+    @participated_users = @event.participating_users.order(participations: :asc)
   end
 
   def new
