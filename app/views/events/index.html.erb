@@ -19,13 +19,13 @@
       開催予定のイベント
     </h1>
   </div>
-  <% if @events_from_today %>
+  <% if @events_from_today.present? %>
     <%= render 'shared/event', events: @events_from_today %>
     <div class="col-auto">
       <%= paginate @events_from_today, param_name: 'future_page', theme: 'bootstrap-5' %>
     </div>
   <% else %>
-    <h4 class="col-auto text-muted ">
+    <h4 class="col-auto text-muted">
       開催予定のイベントはありません。<br>
       過去のイベントを参考に主催してみよう！
     </h4>
@@ -43,7 +43,7 @@
       過去に開催されたイベント
     </h1>
   </div>
-  <% if @events_till_yesterday %>
+  <% if @events_till_yesterday.present? %>
     <%= render 'shared/event', events: @events_till_yesterday %>
     <div class="row justify-content-center">
       <div class="col-auto">
