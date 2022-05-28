@@ -3,13 +3,14 @@ class EventsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
 
   def index
-    @events =
-      Event.eager_load(:category, :participations).from_today.page(params[:page]).per(10)
+    events = Event.eager_load(:category, :participations)
+    @events_from_today = events.from_today.page(params[:future_page]).per(10)
+    @events_till_yesterday = events.till_yesterday.page(params[:past_page]).per(5)
   end
 
   def show
     @event = Event.find(params[:id])
-    @participated_users = @event.participating_users
+    @participated_users = @event.participating_users.order(:id)
   end
 
   def new
@@ -50,7 +51,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :number_of_members, :scheduled_date, :timescale,
-                                  :place, :user_id, :category_id)
+    params.require(:event).permit(:title, :description, :number_of_members, :scheduled_date,
+                                  :timescale, :place, :user_id, :category_id)
   end
 end
