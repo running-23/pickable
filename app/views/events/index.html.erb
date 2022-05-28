@@ -15,21 +15,22 @@
 
 <div class="container">
   <div class="row justify-content-center my-5">
-    <h1 class="col-auto orange">
+    <h1 class="col-auto orange mb-5">
       開催予定のイベント
     </h1>
-  </div>
-  <% if @events_from_today.present? %>
+    <% if @events_from_today.present? %>
     <%= render 'shared/event', events: @events_from_today %>
-    <div class="col-auto">
-      <%= paginate @events_from_today, param_name: 'future_page', theme: 'bootstrap-5' %>
-    </div>
-  <% else %>
-    <h4 class="col-auto text-muted">
-      開催予定のイベントはありません。<br>
-      過去のイベントを参考に主催してみよう！
-    </h4>
-  <% end %>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <%= paginate @events_from_today, param_name: 'future_page', theme: 'bootstrap-5' %>
+      </div>
+    <% else %>
+      <h4 class="col-auto text-muted">
+        開催予定のイベントはありません。<br>
+        過去のイベントを参考に主催してみよう！
+      </h4>
+    <% end %>
+  </div>
 </div>
 
 <div class="row justify-content-center my-5 pt-5">
@@ -39,16 +40,16 @@
 
 <div class="container">
   <div class="row justify-content-center my-5 py-5">
-    <h1 class="col-auto orange">
+    <h1 class="col-auto orange mb-5">
       過去に開催されたイベント
     </h1>
-  </div>
-  <% if @events_till_yesterday.present? %>
-    <%= render 'shared/event', events: @events_till_yesterday %>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <%= paginate @events_till_yesterday, param_name: 'past_page', theme: 'bootstrap-5' %>
+    <% if @events_till_yesterday.present? %>
+      <%= render 'shared/event', events: @events_till_yesterday %>
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <%= paginate @events_till_yesterday, param_name: 'past_page', theme: 'bootstrap-5' %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
