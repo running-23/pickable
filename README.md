@@ -1,4 +1,4 @@
-# pickable(仮)
+# pickable
 
 ## サービス概要
 コミュニティの強さを活かして偶発性を楽しむイベントツール
@@ -108,6 +108,6 @@ ER図作成： ~2/15
 
 本リリース： 3月中〜下旬
 ## 画面遷移図
-https://www.figma.com/file/MDG2PmmSNAQeeXRj0lDXZ1/Pickable?node-id=0%3A1
+https://www.figma.com/design/dIojtrYK4sPY9JchPf4kFj/Pickable?t=wwV5lttVha43lJw0-0
 ## ER図
 https://drive.google.com/file/d/1GkSOMOCz3LnxglkUqOGtZauWllHLjMeb/view?usp=sharing
